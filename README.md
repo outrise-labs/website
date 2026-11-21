@@ -44,7 +44,7 @@ On Vercel, import the repository and keep the defaults: framework preset "Other"
 ## Status
 
 - Copy is a draft.
-- The contact address `ola@outriselabs.ai` only works once the domain is registered.
+- The contact address `ola@outrise.technology` only works once email is set up for the domain.
 - The figures in the bento tiles ("128" tasks, the agent log) are illustrative and labelled as examples on the page.
 
 ## License
