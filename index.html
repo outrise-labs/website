@@ -75,7 +75,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
   -webkit-mask-size:10px 10px;mask-size:10px 10px}
 
 /* barra flutuante */
-.top{position:sticky;top:12px;z-index:20;height:64px;margin:12px clamp(12px,2.4vw,28px) -76px;padding:0 10px 0 22px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:14px;background:rgba(22,22,27,.92);border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 32px -10px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff}
+.top{position:sticky;top:12px;z-index:20;height:64px;width:calc(100% - 2 * var(--gutter));max-width:calc(1200px - 2 * var(--gutter));margin:12px auto -76px;padding:0 10px 0 20px;display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:14px;background:rgba(22,22,27,.92);border:1px solid rgba(255,255,255,.15);box-shadow:0 12px 32px -10px rgba(0,0,0,.7),inset 0 1px 0 rgba(255,255,255,.05);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff}
 .brand{display:flex;align-items:center;gap:.34em;font-size:1.5rem;font-weight:500;letter-spacing:-.04em;line-height:1;text-decoration:none;color:#fff}
 .brand .mark{width:1.02em;height:.85em;margin-top:.02em}
 .brand:hover .mark,.brand:focus-visible .mark{--dx:5px;--dy:-3.4px}
