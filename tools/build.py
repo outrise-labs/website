@@ -17,7 +17,7 @@ EN = [
  ('content="Outrise · Construímos soluções de IA em que podes confiar"', 'content="Outrise · AI solutions you can trust"'),
  ('content="Produtos com agentes de IA para pessoas e empresas. Pede acesso antecipado."', 'content="AI agent products for people and businesses. Request early access."'),
  ('media/og.png"', 'media/og-en.png"'),
- ('<a class="lang" href="en/" hreflang="en" lang="en" aria-label="English version">EN</a>', '<a class="lang" href="../" hreflang="pt" lang="pt" aria-label="Versão em português">PT</a>'),
+ ('<a class="lang" href="en/" hreflang="en" lang="en">EN<span class="sr"> English version</span></a>', '<a class="lang" href="../" hreflang="pt" lang="pt">PT<span class="sr"> Versão em português</span></a>'),
  # long sentences first
  ('Primeiros produtos em construção. Pede acesso antecipado.', 'First products in the works. Request early access.'),
  ('Construímos soluções de IA', 'We build AI solutions'),
@@ -28,7 +28,7 @@ EN = [
  ('O que construímos, para quem e com que princípios. Narrado em inglês.', 'What we build, for whom, and the principles behind it.'),
  ('Agentes de IA que tratam do trabalho por ti.', 'AI agents that take care of the work for you.'),
  ('Vê como funciona.', 'See how it works.'),
- ('Ver a apresentação da Outrise', 'Watch the Outrise film'),
+ ('Ver a apresentação da Outrise', 'Watch the film about Outrise'),
  ('Ver a apresentação', 'Watch the film'),
  ('Há trabalho que ninguém quer fazer.', 'Some work nobody wants to do.'),
  ('Os nossos agentes fazem-no.', 'Our agents do it.'),
