@@ -140,7 +140,7 @@ def ld(lang):
     org = {"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/",
            "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology",
            "description": "Produtos com agentes de IA para pessoas e empresas." if pt else "AI agent products for people and businesses.",
-           "founder": {"@type": "Person", "name": "Nuno Namora", "jobTitle": "Fundador" if pt else "Founder"},
+           "founder": {"@type": "Person", "name": "Nuno Namora", "image": "https://www.outrise.technology/media/nuno-600.jpg", "jobTitle": "Fundador" if pt else "Founder"},
            "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT",
            "sameAs": ["https://github.com/outrise-labs"]}
     site = {"@type": "WebSite", "@id": url + "#site", "url": url, "name": "Outrise", "inLanguage": "pt-PT" if pt else "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}
