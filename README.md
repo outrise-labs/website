@@ -2,12 +2,12 @@
 
 Landing page for Outrise, a company building AI-agent products for people and businesses.
 
-The site is in Portuguese (pt-PT) at the root and in English under `/en/`.
+The site is in English at the root and in Portuguese (pt-PT) under `/pt/`. Old `/en/` and `/privacidade.html` addresses redirect (see `vercel.json`).
 
 ## Stack
 
-- Static pages with inline CSS and JavaScript: `index.html` (Portuguese) and `en/index.html` (English), plus the privacy pages.
-- The pages are generated from `tools/src.html` by `tools/build.py`, which fills in the logo path, translates the English page and writes the privacy pages. Run `python3 build.py [supabase_url] [publishable_key]` inside `tools/` and copy the output to the root.
+- Static pages with inline CSS and JavaScript: `index.html` (English) and `pt/index.html` (Portuguese), plus the privacy pages.
+- The pages are generated from `tools/src.html` by `tools/build.py`, which fills in the logo path, translates the English page and writes the privacy pages. It also writes `sitemap.xml`, `robots.txt` and `site.webmanifest`. Run `python3 build.py [supabase_url] [publishable_key]` inside `tools/` and copy the output to the root.
 - [three.js](https://threejs.org/) r128, loaded from cdnjs, renders the dot-grid visuals: the particle orbit in the hero and the diagonal light in the "Como trabalhamos" section.
 - Outrise Sans, the brand typeface, self-hosted from `fonts/`. It is a modified version of [Albert Sans](https://github.com/usted/Albert-Sans) under the SIL Open Font License (`fonts/OFL.txt`).
 - Geist Mono for labels, self-hosted from `fonts/` (SIL Open Font License, `fonts/GeistMono-OFL.txt`).
@@ -32,13 +32,14 @@ On Vercel, import the repository and keep the defaults: framework preset "Other"
 
 ```
 .
-├── index.html          # Portuguese page
-├── en/index.html       # English page
-├── privacidade.html    # privacy policy (pt)
-├── en/privacy.html     # privacy policy (en)
-├── favicon.svg, favicon-32.png, apple-touch-icon.png
-├── fonts/              # Outrise Sans (woff2) and its license
-├── media/              # brand film, poster, subtitles and sharing images
+├── index.html          # English page
+├── pt/index.html       # Portuguese page
+├── privacy.html        # privacy policy (en)
+├── pt/privacidade.html # privacy policy (pt)
+├── sitemap.xml, robots.txt, site.webmanifest, vercel.json
+├── favicon.svg, favicon-32.png, apple-touch-icon.png, icon-192.png, icon-512.png
+├── fonts/              # Outrise Sans and Geist Mono (woff2) and their licenses
+├── media/              # brand film, poster, subtitles, sharing images and hero still
 ├── tools/              # page source and build script
 └── README.md
 ```
