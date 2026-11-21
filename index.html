@@ -7,8 +7,14 @@
 <meta name="description" content="A Outrise cria produtos com agentes de IA que resolvem problemas reais de pessoas e empresas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&amp;family=Geist+Mono:wght@400;500&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&amp;display=swap">
+<link rel="preload" href="fonts/OutriseSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+/* Outrise Sans: versão modificada do Albert Sans (SIL OFL 1.1). */
+@font-face{font-family:"Outrise Sans";font-style:normal;font-weight:300;font-display:swap;src:url("fonts/OutriseSans-Light.woff2") format("woff2")}
+@font-face{font-family:"Outrise Sans";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/OutriseSans-Regular.woff2") format("woff2")}
+@font-face{font-family:"Outrise Sans";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/OutriseSans-Medium.woff2") format("woff2")}
+@font-face{font-family:"Outrise Sans";font-style:normal;font-weight:600;font-display:swap;src:url("fonts/OutriseSans-SemiBold.woff2") format("woff2")}
 /* Folhas de cor empilhadas com os cantos de cima arredondados, uma barra flutuante, títulos leves a dois tons
    e etiquetas pequenas em letra de código. A grelha de pontos em three.js vive nas duas folhas escuras. */
 :root{
@@ -24,7 +30,7 @@
   --silver:#D8D8DC;
   --soft:#9A9AA3;
   --line:#26262E;
-  --display:"Geist","Helvetica Neue",Arial,sans-serif;
+  --display:"Outrise Sans","Helvetica Neue",Arial,sans-serif;
   --mono:"Geist Mono",ui-monospace,Menlo,Consolas,monospace;
   --gutter:clamp(20px,5vw,56px);
   --sheet:clamp(28px,4vw,44px);
@@ -44,7 +50,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 .mark{display:block;flex:none}
 .dot{fill:var(--dot,#6E7BFF);transform:translate(var(--dx,0px),var(--dy,0px));transition:transform .5s var(--ease)}
 .wrap{width:100%;max-width:1200px;margin:0 auto;padding-inline:var(--gutter)}
-.h2{font-size:clamp(1.9rem,3.7vw,3rem);line-height:1.08;letter-spacing:-.03em;font-weight:300}
+.h2{font-size:clamp(1.9rem,3.7vw,3rem);line-height:1.08;letter-spacing:-.025em;font-weight:400}
 .h2 b{font-weight:500}
 .chip{display:inline-flex;align-items:center;height:24px;padding:0 7px;border:1px solid currentColor;border-radius:4px;font:500 .6875rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink)}
 .dark{color:var(--silver)}
@@ -101,10 +107,10 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 .news b{display:inline-flex;align-items:center;height:20px;padding:0 6px;border:1px solid var(--blue);border-radius:3px;color:var(--blue);font-weight:500;font-size:.6875rem;letter-spacing:.06em}
 .news:hover span{color:#fff;text-decoration:underline;text-underline-offset:3px}
 .lead{margin-top:18px;display:grid;gap:clamp(18px,2.4vw,26px)}
-.hero h1{font-size:clamp(2.4rem,4.7vw,3.9rem);line-height:1.04;letter-spacing:-.035em;font-weight:400}
+.hero h1{font-size:clamp(2.5rem,5.1vw,4.3rem);line-height:1.03;letter-spacing:-.03em;font-weight:400}
 .hero h1 .ln{display:block;overflow:hidden;padding-bottom:.12em;margin-bottom:-.12em}
 .hero h1 .ln > span{display:block;animation:rise .9s var(--ease) both}
-.hero h1 .ln:nth-child(2) > span{animation-delay:.09s;color:#8E8E99;font-weight:300}
+.hero h1 .ln:nth-child(2) > span{animation-delay:.09s;color:#8E8E99;font-weight:400}
 .lede{max-width:47ch;text-wrap:pretty;font-size:clamp(1.125rem,1.55vw,1.3125rem);line-height:1.45;font-weight:400;color:#A6A6B2;animation:fade .9s .3s ease both}
 .lede b{font-weight:400;color:#fff}
 .actions{margin-top:clamp(24px,4vh,34px);display:flex;flex-wrap:wrap;gap:10px;animation:fade .9s .45s ease both}

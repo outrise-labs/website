@@ -8,7 +8,8 @@ The page content is in Portuguese (pt-PT).
 
 - A single static `index.html` with inline CSS and JavaScript. No build step, no dependencies to install.
 - [three.js](https://threejs.org/) r128, loaded from cdnjs, renders the dot-grid visuals: the particle orbit in the hero and the diagonal light in the "Como trabalhamos" section.
-- [Geist](https://vercel.com/font) and Geist Mono, loaded from Google Fonts.
+- Outrise Sans, the brand typeface, self-hosted from `fonts/`. It is a modified version of [Albert Sans](https://github.com/usted/Albert-Sans) under the SIL Open Font License (`fonts/OFL.txt`).
+- Geist Mono for labels, loaded from Google Fonts.
 
 ## Local development
 
@@ -31,6 +32,7 @@ On Vercel, import the repository and keep the defaults: framework preset "Other"
 ```
 .
 ├── index.html   # the whole site
+├── fonts/       # Outrise Sans (woff2) and its license
 └── README.md
 ```
 
@@ -47,4 +49,4 @@ On Vercel, import the repository and keep the defaults: framework preset "Other"
 
 ## License
 
-Copyright © 2026 Outrise. All rights reserved.
+Copyright © 2026 Outrise. All rights reserved, except the fonts in `fonts/`, which are licensed under the SIL Open Font License 1.1.
