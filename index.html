@@ -28,7 +28,7 @@
 <meta name="twitter:description" content="AI agent products for people and businesses. Request early access.">
 <meta name="twitter:image" content="https://www.outrise.technology/media/og-en.png">
 <link rel="manifest" href="site.webmanifest">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/", "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology", "description": "AI agent products for people and businesses.", "founder": {"@type": "Person", "name": "Nuno Namora", "jobTitle": "Founder"}, "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT", "sameAs": ["https://github.com/outrise-labs"]}, {"@type": "WebSite", "@id": "https://www.outrise.technology/#site", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}, {"@type": "WebPage", "@id": "https://www.outrise.technology/#page", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "isPartOf": {"@id": "https://www.outrise.technology/#site"}, "about": {"@id": "https://www.outrise.technology/#org"}, "primaryImageOfPage": "https://www.outrise.technology/media/og-en.png"}, {"@type": "VideoObject", "name": "Outrise", "description": "Outrise in 32 seconds: AI agents that take care of the work for you.", "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-21", "duration": "PT32S", "contentUrl": "https://www.outrise.technology/media/outrise-film.mp4", "inLanguage": "en"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/", "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology", "description": "AI agent products for people and businesses.", "founder": {"@type": "Person", "name": "Nuno Namora", "image": "https://www.outrise.technology/media/nuno-600.jpg", "jobTitle": "Founder"}, "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT", "sameAs": ["https://github.com/outrise-labs"]}, {"@type": "WebSite", "@id": "https://www.outrise.technology/#site", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}, {"@type": "WebPage", "@id": "https://www.outrise.technology/#page", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "isPartOf": {"@id": "https://www.outrise.technology/#site"}, "about": {"@id": "https://www.outrise.technology/#org"}, "primaryImageOfPage": "https://www.outrise.technology/media/og-en.png"}, {"@type": "VideoObject", "name": "Outrise", "description": "Outrise in 32 seconds: AI agents that take care of the work for you.", "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-21", "duration": "PT32S", "contentUrl": "https://www.outrise.technology/media/outrise-film.mp4", "inLanguage": "en"}]}</script>
 <meta name="theme-color" content="#050506">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -273,7 +273,8 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 @media (max-width:860px){.team-grid{grid-template-columns:minmax(0,1fr)}}
 .team .h2{max-width:14ch}
 .person{display:flex;gap:20px;align-items:flex-start;padding:24px;border:1px solid #E3E3EA;border-radius:16px;background:#fff}
-.avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--cobalt);color:#fff;font:500 1.25rem/1 var(--display);letter-spacing:.02em}
+.avatar{flex:none;width:96px;height:96px;border-radius:50%;object-fit:cover;background:#1a1a22}
+@media (max-width:520px){.person{flex-direction:column}}
 .person h3{margin:2px 0 0;font:500 1.25rem/1.2 var(--display);letter-spacing:-.01em}
 .person .role{margin:4px 0 10px;font:400 .8125rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cobalt)}
 .person p:last-child{margin:0;color:var(--body);max-width:52ch}
@@ -532,7 +533,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
       <div class="team-grid">
         <h2 class="h2"><b>Who is behind it.</b> People, not just agents.</h2>
         <article class="person">
-          <div class="avatar" aria-hidden="true">NN</div>
+          <img class="avatar" src="media/nuno.webp" width="96" height="96" alt="Nuno Namora" loading="lazy" decoding="async">
           <div>
             <h3>Nuno Namora</h3>
             <p class="role">Founder</p>
