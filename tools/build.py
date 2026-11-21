@@ -1,4 +1,4 @@
-"""Builds the site from src.html: Portuguese at the root, English under en/, plus the privacy pages.
+"""Builds the site from src.html: English at the root, Portuguese under pt/, plus the privacy pages.
 Usage: python3 build.py [supabase_url] [publishable_key]"""
 import sys, os, re
 URL = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -9,15 +9,20 @@ src = open("src.html").read().replace("__ORBIT__", ORBIT).replace("__WL_URL__", 
 EN = [
  # head
  ('<html lang="pt-PT">', '<html lang="en">'),
- ('<title>Outrise · Produtos com agentes de IA</title>', '<title>Outrise · AI agent products</title>'),
- ('content="A Outrise cria produtos com agentes de IA que resolvem problemas reais de pessoas e empresas. Primeiros produtos em construção."', 'content="Outrise builds AI agent products that solve real problems for people and businesses. First products in the works."'),
- ('<link rel="canonical" href="https://www.outrise.technology/">', '<link rel="canonical" href="https://www.outrise.technology/en/">'),
+ ('<title>Outrise · Agentes de IA para pessoas e empresas</title>', '<title>Outrise · AI agents for people and businesses</title>'),
+ ('content="A Outrise cria produtos com agentes de IA que tratam do trabalho repetitivo de pessoas e empresas: marcações, faturas, apoio ao cliente. Pede acesso antecipado."', 'content="Outrise builds AI agent products that take repetitive work off people and businesses: bookings, invoices, customer support. Request early access."'),
+ ('<meta property="og:image:alt" content="Outrise: construímos soluções de IA em que podes confiar">', '<meta property="og:image:alt" content="Outrise: AI agents that take care of the work for you">'),
+ ('<meta property="og:locale:alternate" content="en_GB">', '<meta property="og:locale:alternate" content="pt_PT">'),
+ ('<meta name="twitter:title" content="Outrise · Construímos soluções de IA em que podes confiar">', '<meta name="twitter:title" content="Outrise · AI solutions you can trust">'),
+ ('<meta name="twitter:description" content="Produtos com agentes de IA para pessoas e empresas. Pede acesso antecipado.">', '<meta name="twitter:description" content="AI agent products for people and businesses. Request early access.">'),
+ ('<meta name="twitter:image" content="https://www.outrise.technology/media/og.png">', '<meta name="twitter:image" content="https://www.outrise.technology/media/og-en.png">'),
+ ('<link rel="canonical" href="https://www.outrise.technology/pt/">', '<link rel="canonical" href="https://www.outrise.technology/">'),
  ('<meta property="og:locale" content="pt_PT">', '<meta property="og:locale" content="en_GB">'),
- ('<meta property="og:url" content="https://www.outrise.technology/">', '<meta property="og:url" content="https://www.outrise.technology/en/">'),
+ ('<meta property="og:url" content="https://www.outrise.technology/pt/">', '<meta property="og:url" content="https://www.outrise.technology/">'),
  ('content="Outrise · Construímos soluções de IA em que podes confiar"', 'content="Outrise · AI solutions you can trust"'),
  ('content="Produtos com agentes de IA para pessoas e empresas. Pede acesso antecipado."', 'content="AI agent products for people and businesses. Request early access."'),
  ('media/og.png"', 'media/og-en.png"'),
- ('<a class="lang" href="en/" hreflang="en" lang="en">EN<span class="sr"> English version</span></a>', '<a class="lang" href="../" hreflang="pt" lang="pt">PT<span class="sr"> Versão em português</span></a>'),
+ ('<a class="lang" href="../" hreflang="en" lang="en">EN<span class="sr"> English version</span></a>', '<a class="lang" href="pt/" hreflang="pt" lang="pt">PT<span class="sr"> Versão em português</span></a>'),
  # long sentences first
  ('Primeiros produtos em construção. Pede acesso antecipado.', 'First products in the works. Request early access.'),
  ('Construímos soluções de IA', 'We build AI solutions'),
@@ -122,14 +127,53 @@ for a, b in SHORT.items():
     if not n: raise SystemExit("missing short: " + a)
     en = en.replace(">" + a + "<", ">" + b + "<").replace('aria-label="' + a + '"', 'aria-label="' + b + '"')
 en = en.replace('Preferes email?', 'Prefer email?')
-# en/ lives one folder down
-for d in ("fonts/", "media/", "favicon.svg", "favicon-32.png", "apple-touch-icon.png"):
-    en = en.replace('"' + d, '"../' + d).replace("'" + d, "'../" + d)
+# pt/ lives one folder down
+pt = src
+for d in ("fonts/", "media/", "favicon.svg", "favicon-32.png", "apple-touch-icon.png", "site.webmanifest"):
+    pt = pt.replace('"' + d, '"../' + d).replace("'" + d, "'../" + d)
 left = [w for w in ("Construímos","Fiáveis","Pede ","Copiar","Feito em","agentes de IA que tratam","Narrado","conta-nos","Preferes") if w in en]
 if left: raise SystemExit("untranslated: " + ", ".join(left))
-open("index.html", "w").write(src)
-os.makedirs("en", exist_ok=True)
-open("en/index.html", "w").write(en)
+import json
+def ld(lang):
+    pt = lang == "pt"
+    url = "https://www.outrise.technology/" + ("pt/" if pt else "")
+    org = {"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/",
+           "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology",
+           "description": "Produtos com agentes de IA para pessoas e empresas." if pt else "AI agent products for people and businesses.",
+           "founder": {"@type": "Person", "name": "Nuno Namora", "jobTitle": "Fundador" if pt else "Founder"},
+           "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT",
+           "sameAs": ["https://github.com/outrise-labs"]}
+    site = {"@type": "WebSite", "@id": url + "#site", "url": url, "name": "Outrise", "inLanguage": "pt-PT" if pt else "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}
+    page = {"@type": "WebPage", "@id": url + "#page", "url": url, "name": "Outrise", "inLanguage": "pt-PT" if pt else "en", "isPartOf": {"@id": url + "#site"},
+            "about": {"@id": "https://www.outrise.technology/#org"}, "primaryImageOfPage": "https://www.outrise.technology/media/" + ("og.png" if pt else "og-en.png")}
+    video = {"@type": "VideoObject", "name": "Outrise", "description": ("Apresentação da Outrise: agentes de IA que tratam do trabalho por ti. Narrado em inglês." if pt else "Outrise in 32 seconds: AI agents that take care of the work for you."),
+             "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-21", "duration": "PT32S",
+             "contentUrl": "https://www.outrise.technology/media/outrise-film.mp4", "inLanguage": "en"}
+    return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [org, site, page, video]}, ensure_ascii=False) + '</script>'
+en = en.replace("<!--LD-->", ld("en"))
+pt = pt.replace("<!--LD-->", ld("pt"))
+open("index.html", "w").write(en)
+os.makedirs("pt", exist_ok=True)
+open("pt/index.html", "w").write(pt)
+
+# sitemap, robots and web manifest
+open("sitemap.xml", "w").write('''<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://www.outrise.technology/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.outrise.technology/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.outrise.technology/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.outrise.technology/"/></url>
+  <url><loc>https://www.outrise.technology/pt/</loc><lastmod>2026-11-21</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.outrise.technology/"/>
+    <xhtml:link rel="alternate" hreflang="pt-PT" href="https://www.outrise.technology/pt/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.outrise.technology/"/></url>
+</urlset>
+''')
+open("robots.txt", "w").write("User-agent: *\nAllow: /\n\nSitemap: https://www.outrise.technology/sitemap.xml\n")
+open("site.webmanifest", "w").write(json.dumps({"name": "Outrise", "short_name": "Outrise", "start_url": "/", "display": "standalone",
+  "background_color": "#050506", "theme_color": "#050506",
+  "icons": [{"src": "/icon-192.png", "sizes": "192x192", "type": "image/png"}, {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png"},
+            {"src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}]}, indent=2))
 
 # privacy pages
 STYLE = '''<style>@font-face{font-family:"Outrise Sans";font-weight:400;src:url("%sfonts/OutriseSans-Regular.woff2") format("woff2")}@font-face{font-family:"Outrise Sans";font-weight:500;src:url("%sfonts/OutriseSans-Medium.woff2") format("woff2")}
@@ -143,9 +187,9 @@ h2{font-weight:500;font-size:1.25rem;letter-spacing:-.01em;margin:36px 0 6px}
 p,li{color:#33343B} .meta{color:#6A6A76;font-size:.9375rem}
 .note{margin-top:40px;padding:16px 18px;border-radius:10px;background:#F4F4F7;color:#4B4F58;font-size:.9375rem}</style>'''
 LOGO = '<svg viewBox="9.46 18.72 87.85 73.24" aria-hidden="true"><path fill="#050506" d="%s"/><circle fill="#050506" cx="73.77" cy="48.22" r="7.46"/><circle fill="#050506" cx="64.22" cy="34.06" r="4.54"/><circle fill="#2B3BFF" cx="87.11" cy="28.92" r="10.2"/></svg>' % ORBIT
-PT_P = '''<!DOCTYPE html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacidade · Outrise</title><meta name="robots" content="noindex"><link rel="icon" href="favicon.svg" type="image/svg+xml">%s<script defer src="/_vercel/insights/script.js"></script></head><body><main>
+PT_P = '''<!DOCTYPE html><html lang="pt-PT"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacidade · Outrise</title><meta name="robots" content="noindex"><link rel="icon" href="../favicon.svg" type="image/svg+xml">%s<script defer src="/_vercel/insights/script.js"></script></head><body><main>
 <a class="back" href="./">%s outrise</a>
-<h1>Política de privacidade</h1><p class="meta">Última atualização: 21 de novembro de 2026 · <a href="en/privacy.html" lang="en">English</a></p>
+<h1>Política de privacidade</h1><p class="meta">Última atualização: 21 de novembro de 2026 · <a href="../privacy.html" lang="en">English</a></p>
 <p>Esta página explica que dados a Outrise recolhe neste site, para quê e que direitos tens.</p>
 <h2>Quem é responsável</h2><p>A Outrise é responsável pelos dados recolhidos em outrise.technology. Para qualquer questão sobre privacidade, escreve para <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>.</p>
 <h2>Que dados recolhemos</h2><ul><li><b>Lista de espera:</b> o nome (se o indicares), o email, se o pedido é para ti ou para uma empresa, a mensagem opcional, a língua da página e a data do pedido.</li><li><b>Estatísticas de visitas:</b> usamos o Vercel Web Analytics, que conta visitas de forma agregada, sem cookies e sem identificar quem visita.</li></ul>
@@ -155,9 +199,9 @@ PT_P = '''<!DOCTYPE html><html lang="pt-PT"><head><meta charset="utf-8"><meta na
 <h2>Durante quanto tempo</h2><p>Até pedires para os apagar, ou no máximo 24 meses depois do último contacto.</p>
 <h2>Os teus direitos</h2><p>Podes pedir acesso, correção ou eliminação dos teus dados, opor-te ao tratamento e pedir a portabilidade, escrevendo para <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>. Se achares que os teus direitos não foram respeitados, podes apresentar queixa à Comissão Nacional de Proteção de Dados (<a href="https://www.cnpd.pt">cnpd.pt</a>).</p>
 </main></body></html>'''
-EN_P = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacy · Outrise</title><meta name="robots" content="noindex"><link rel="icon" href="../favicon.svg" type="image/svg+xml">%s<script defer src="/_vercel/insights/script.js"></script></head><body><main>
+EN_P = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Privacy · Outrise</title><meta name="robots" content="noindex"><link rel="icon" href="favicon.svg" type="image/svg+xml">%s<script defer src="/_vercel/insights/script.js"></script></head><body><main>
 <a class="back" href="./">%s outrise</a>
-<h1>Privacy policy</h1><p class="meta">Last updated: 21 November 2026 · <a href="../privacidade.html" lang="pt">Português</a></p>
+<h1>Privacy policy</h1><p class="meta">Last updated: 21 November 2026 · <a href="pt/privacidade.html" lang="pt">Português</a></p>
 <p>This page explains what data Outrise collects on this site, why, and what rights you have.</p>
 <h2>Who is responsible</h2><p>Outrise is responsible for the data collected on outrise.technology. For any privacy question, write to <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>.</p>
 <h2>What we collect</h2><ul><li><b>Waitlist:</b> your name (if you give it), your email, whether the request is for you or a company, the optional message, the page language and the date of the request.</li><li><b>Visit statistics:</b> we use Vercel Web Analytics, which counts visits in aggregate, without cookies and without identifying visitors.</li></ul>
@@ -167,6 +211,6 @@ EN_P = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name=
 <h2>How long we keep it</h2><p>Until you ask us to delete it, or at most 24 months after our last contact.</p>
 <h2>Your rights</h2><p>You can ask to access, correct or delete your data, object to its use and ask for portability by writing to <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>. If you believe your rights were not respected, you can complain to the Portuguese data protection authority, CNPD (<a href="https://www.cnpd.pt">cnpd.pt</a>).</p>
 </main></body></html>'''
-open("privacidade.html", "w").write(PT_P % (STYLE % ("", ""), LOGO))
-open("en/privacy.html", "w").write(EN_P % (STYLE % ("../", "../"), LOGO))
+open("pt/privacidade.html", "w").write(PT_P % (STYLE % ("../", "../"), LOGO))
+open("privacy.html", "w").write(EN_P % (STYLE % ("", ""), LOGO))
 print("built", len(src), len(en))
