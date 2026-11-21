@@ -658,7 +658,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     still.style.width = still.style.height = (4 * r) + "px"; still.style.left = (b.width / 2 - 0.22 * r - 2 * r) + "px"; still.style.top = (b.height / 2 + 0.20 * r - 2 * r) + "px"; }
   placeStill(); window.addEventListener("resize", placeStill);
 
-  /* o three.js só carrega quando a pessoa mexe na página, ou pouco depois de a página abrir */
+  /* o three.js carrega a seguir ao resto da página, para não atrasar o primeiro ecrã */
   var glAsked = false;
   function loadGL() {
     if (glAsked) return; glAsked = true;
@@ -667,7 +667,9 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     document.head.appendChild(sc);
   }
   ["pointermove", "pointerdown", "touchstart", "wheel", "keydown", "scroll"].forEach(function (ev) { window.addEventListener(ev, loadGL, { once: true, passive: true }); });
-  if (document.readyState === "complete") setTimeout(loadGL, 3200); else window.addEventListener("load", function () { setTimeout(loadGL, 3200); });
+  /* arranca logo que a página acabou de carregar (ou antes, se a pessoa mexer primeiro) */
+  function soon() { (window.requestIdleCallback || function (f) { return setTimeout(f, 1); })(loadGL, { timeout: 300 }); }
+  if (document.readyState === "complete") soon(); else window.addEventListener("load", soon);
 
   function startGL() {
   var THREE = window.THREE;
@@ -798,7 +800,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
       var w = canvas.clientWidth, h = canvas.clientHeight;
       if (!w || !h) return;
       f.w = w; f.h = h;
-      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      var dpr = Math.min(window.devicePixelRatio || 1, window.innerWidth < 760 ? 1.5 : 2);
       renderer.setPixelRatio(dpr); renderer.setSize(w, h, false);
       var aspect = w / h; cam.left = -aspect; cam.right = aspect; cam.updateProjectionMatrix();
       var pitch = w < 700 ? 8.5 : 10.5, step = pitch / (h / 2);
