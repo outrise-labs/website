@@ -2,7 +2,7 @@
 
 Landing page for Outrise, a company building AI-agent products for people and businesses.
 
-The page content is in Portuguese (pt-PT).
+The site is in Portuguese (pt-PT) at the root and in English under `/en/`.
 
 ## Stack
 
@@ -10,7 +10,7 @@ The page content is in Portuguese (pt-PT).
 - The pages are generated from `tools/src.html` by `tools/build.py`, which fills in the logo path, translates the English page and writes the privacy pages. Run `python3 build.py [supabase_url] [publishable_key]` inside `tools/` and copy the output to the root.
 - [three.js](https://threejs.org/) r128, loaded from cdnjs, renders the dot-grid visuals: the particle orbit in the hero and the diagonal light in the "Como trabalhamos" section.
 - Outrise Sans, the brand typeface, self-hosted from `fonts/`. It is a modified version of [Albert Sans](https://github.com/usted/Albert-Sans) under the SIL Open Font License (`fonts/OFL.txt`).
-- Geist Mono for labels, loaded from Google Fonts.
+- Geist Mono for labels, self-hosted from `fonts/` (SIL Open Font License, `fonts/GeistMono-OFL.txt`).
 
 ## Local development
 
