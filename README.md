@@ -33,6 +33,7 @@ On Vercel, import the repository and keep the defaults: framework preset "Other"
 .
 ├── index.html   # the whole site
 ├── fonts/       # Outrise Sans (woff2) and its license
+├── media/       # brand film (mp4) and its poster
 └── README.md
 ```
 

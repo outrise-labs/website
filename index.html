@@ -120,6 +120,17 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 
 /* porquê */
+/* Filme */
+.film{padding-bottom:0}
+.film .head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-top:18px}
+.film .head p{max-width:34ch;color:var(--body)}
+.frame{position:relative;margin-top:clamp(24px,3vw,36px);border-radius:clamp(14px,2vw,22px);overflow:hidden;background:var(--night);aspect-ratio:16/9;box-shadow:0 30px 80px -40px rgba(5,5,6,.55)}
+.frame video{position:absolute;inset:0;width:100%;height:100%;display:block;object-fit:cover}
+.frame .play{position:absolute;inset:0;display:grid;place-items:center;border:0;padding:0;background:transparent;cursor:pointer;color:#fff}
+.frame .play span{display:inline-flex;align-items:center;gap:12px;height:56px;padding:0 24px 0 18px;border-radius:999px;background:rgba(14,14,18,.72);border:1px solid rgba(255,255,255,.18);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);font:500 1.0625rem/1 var(--display);transition:transform .35s var(--ease),background .35s var(--ease)}
+.frame .play svg{width:22px;height:22px}
+.frame .play:hover span{transform:scale(1.04);background:rgba(43,59,255,.9)}
+.frame.on .play{display:none}
 .why .intro{margin-top:18px;display:grid;gap:22px;max-width:40rem}
 .why .intro p{max-width:46ch}
 .cards{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
@@ -300,6 +311,20 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
       <ul class="jobs" aria-label="Trabalho que queremos tirar das tuas mãos">
         <li>Trabalho que queremos tirar das tuas mãos</li><li>Marcações</li><li>Faturas</li><li>Apoio ao cliente</li><li>Relatórios</li><li>Encomendas</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="plain film" id="filme">
+    <div class="wrap">
+      <span class="chip">Apresentação</span>
+      <div class="head">
+        <h2 class="h2"><b>Agentes de IA que tratam do trabalho por ti.</b> Vê como funciona.</h2>
+        <p>O que construímos, para quem e com que princípios. Narrado em inglês.</p>
+      </div>
+      <div class="frame">
+        <video id="filme-video" src="media/outrise-film.mp4" poster="media/outrise-film-poster.jpg" preload="none" playsinline></video>
+        <button class="play" type="button" id="filme-play" aria-label="Ver a apresentação da Outrise"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>Ver a apresentação</span></button>
+      </div>
     </div>
   </section>
 
@@ -754,6 +779,10 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
   }
   window.requestAnimationFrame(frame);
 })();
+
+  // filme: o botão arranca o vídeo com som e passa aos controlos nativos
+  (function(){var v=document.getElementById('filme-video'),b=document.getElementById('filme-play');if(!v||!b)return;
+    b.addEventListener('click',function(){v.controls=true;v.closest('.frame').classList.add('on');var p=v.play();if(p&&p.catch)p.catch(function(){});});})();
 </script>
 </body>
 </html>
