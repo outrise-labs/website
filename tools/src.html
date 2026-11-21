@@ -770,8 +770,9 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
   function orbitTargets() {
     var out = [], kinds = [], i;
     function gauss() { return (Math.random() + Math.random() + Math.random() - 1.5) / 1.5; }
-    for (i = 0; i < 5600; i++) { out.push(1 + (Math.random() * 2 - 1) * 0.31, Math.random() * 6.2832, gauss() * 0.02); kinds.push(1); }
-    for (i = 0; i < 2600; i++) { out.push(0.28 + Math.pow(Math.random(), 0.75) * 1.85, Math.random() * 6.2832, gauss() * 0.06); kinds.push(3); }
+    var D = window.innerWidth < 760 ? 0.6 : 1;
+    for (i = 0; i < Math.round(5600 * D); i++) { out.push(1 + (Math.random() * 2 - 1) * 0.31, Math.random() * 6.2832, gauss() * 0.02); kinds.push(1); }
+    for (i = 0; i < Math.round(2600 * D); i++) { out.push(0.28 + Math.pow(Math.random(), 0.75) * 1.85, Math.random() * 6.2832, gauss() * 0.06); kinds.push(3); }
     for (i = 0; i < 460; i++) {
       var yy = 1 - 2 * (i + 0.5) / 460, rr = Math.sqrt(1 - yy * yy), ph = i * 2.399963;
       out.push(rr * Math.cos(ph), yy, rr * Math.sin(ph)); kinds.push(2);
@@ -847,7 +848,9 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     build();
     fields.push(f);
   }
-  stages.forEach(makeField);
+  /* só a entrada arranca já; o efeito de baixo nasce quando a pessoa se aproxima dele */
+  makeField(stages[0]);
+  var lazyStages = stages.slice(1);
 
   var rs;
   window.addEventListener("resize", function () { window.clearTimeout(rs); rs = window.setTimeout(function () { fields.forEach(function (f) { f.build(); }); }, 160); });
@@ -867,6 +870,20 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     }, { threshold: steps });
     fields.forEach(function (f) { io.observe(f.stage); });
   } else { fields.forEach(function (f) { f.visible = true; f.maxRatio = 1; }); }
+
+  function addLater(stage) {
+    makeField(stage); var f = fields[fields.length - 1];
+    if (!f || f.stage !== stage) return;
+    if (io) io.observe(stage); else { f.visible = true; f.maxRatio = 1; }
+    if (reduce) { f.u.uTime.value = 4; f.render(); }
+    stage.classList.add("gl-on");
+  }
+  if (lazyStages.length) {
+    if ("IntersectionObserver" in window) {
+      var pre = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { pre.unobserve(en.target); addLater(en.target); } }); }, { rootMargin: "700px 0px" });
+      lazyStages.forEach(function (st) { pre.observe(st); });
+    } else lazyStages.forEach(addLater);
+  }
 
   if (reduce) { fields.forEach(function (f) { f.u.uTime.value = 4; f.render(); }); return; }
 
