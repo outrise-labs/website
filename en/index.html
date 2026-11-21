@@ -24,6 +24,7 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <script defer src="/_vercel/insights/script.js"></script>
 <link rel="preload" href="../fonts/OutriseSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/OutriseSans-Medium.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* Outrise Sans: versão modificada do Albert Sans (SIL OFL 1.1). */
 @font-face{font-family:"Geist Mono";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/GeistMono-Regular.woff2") format("woff2")}
@@ -104,6 +105,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 .brand:hover .mark,.brand:focus-visible .mark{--dx:5px;--dy:-3.4px}
 .top .right{display:flex;align-items:center;gap:8px}
 .lang{display:inline-grid;place-items:center;min-width:40px;height:40px;padding:0 8px;border-radius:8px;color:#C9C9D2;text-decoration:none;font:500 .8125rem/1 var(--mono);letter-spacing:.06em}
+.sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .lang:hover{color:#fff;background:rgba(255,255,255,.08)}
 .top .btn{min-height:40px;padding:0 14px;font-size:.9375rem}
 .menu-btn{width:44px;height:44px;border-radius:6px;border:0;background:transparent;color:#fff;cursor:pointer;display:inline-flex;align-items:center;justify-content:center}
@@ -120,7 +122,9 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 @media (max-width:860px){.hero::after{background:linear-gradient(0deg,rgba(5,5,6,.9) 0%,rgba(5,5,6,.7) 48%,rgba(5,5,6,0) 62%)}}
 .hero .wrap{padding-block:clamp(104px,14vh,140px) clamp(28px,4vw,40px)}
 .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(16px,3vw,48px);align-items:center}
-.hero .orbit-stage{min-height:clamp(380px,44vw,580px)}
+.hero .orbit-stage{min-height:clamp(380px,44vw,580px);position:relative}
+.still{position:absolute;max-width:none;pointer-events:none;mix-blend-mode:lighten;opacity:1;transition:opacity 1.1s var(--ease);-webkit-mask-image:radial-gradient(closest-side,#000 72%,transparent 100%);mask-image:radial-gradient(closest-side,#000 72%,transparent 100%)}
+.gl-on .still{opacity:0}
 @media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.hero .orbit-stage{order:-1;min-height:320px}}
 .news{display:inline-flex;align-items:center;gap:10px;font:400 .8125rem/1.3 var(--mono);color:var(--silver);text-decoration:none;animation:fade .8s ease both}
 .news b{display:inline-flex;align-items:center;height:20px;padding:0 6px;border:1px solid var(--blue);border-radius:3px;color:var(--blue);font-weight:500;font-size:.6875rem;letter-spacing:.06em}
@@ -258,9 +262,9 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 @media (max-width:860px){.team-grid{grid-template-columns:minmax(0,1fr)}}
 .team .h2{max-width:14ch}
 .person{display:flex;gap:20px;align-items:flex-start;padding:24px;border:1px solid #E3E3EA;border-radius:16px;background:#fff}
-.avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font:500 1.25rem/1 var(--display);letter-spacing:.02em}
+.avatar{flex:none;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:var(--cobalt);color:#fff;font:500 1.25rem/1 var(--display);letter-spacing:.02em}
 .person h3{margin:2px 0 0;font:500 1.25rem/1.2 var(--display);letter-spacing:-.01em}
-.person .role{margin:4px 0 10px;font:400 .8125rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--blue)}
+.person .role{margin:4px 0 10px;font:400 .8125rem/1 var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--cobalt)}
 .person p:last-child{margin:0;color:var(--body);max-width:52ch}
 .status{margin-top:clamp(28px,4vw,40px);padding-top:20px;border-top:1px solid #E3E3EA}
 .status p{margin:0;color:var(--body)}
@@ -338,7 +342,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 <header class="top">
   <a class="brand" href="#inicio" aria-label="Outrise, home"><svg class="mark" aria-hidden="true"><use href="#orbita"></use></svg><span>outrise</span></a>
   <div class="right">
-    <a class="lang" href="../" hreflang="pt" lang="pt" aria-label="Versão em português">PT</a>
+    <a class="lang" href="../" hreflang="pt" lang="pt">PT<span class="sr"> Versão em português</span></a>
     <a class="btn line" href="#como">How we work</a>
     <a class="btn" href="#contacto">Talk to us</a>
     <button class="menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
@@ -369,7 +373,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
         <a class="btn line" href="#agentes">See how it works</a>
       </div>
       </div>
-      <div class="orbit-stage" role="img" aria-label="The Outrise symbol made of moving particles: an open orbit with a blue dot leaving it."></div>
+      <div class="orbit-stage" role="img" aria-label="The Outrise symbol made of moving particles: an open orbit with a blue dot leaving it."><img class="still" src="../media/hero-still.webp" alt="" width="900" height="900" fetchpriority="high" decoding="async"></div>
       </div>
       <ul class="jobs" aria-label="Work we want to take off your hands">
         <li>Work we want to take off your hands</li><li>Bookings</li><li>Invoices</li><li>Customer support</li><li>Reports</li><li>Orders</li>
@@ -385,8 +389,8 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
         <p>What we build, for whom, and the principles behind it.</p>
       </div>
       <div class="frame">
-        <video id="filme-video" src="../media/outrise-film.mp4" poster="../media/outrise-film-poster.jpg" preload="none" playsinline crossorigin="anonymous"><track kind="captions" srclang="en" label="English" src="../media/outrise-film.en.vtt"><track kind="subtitles" srclang="pt" label="Português" src="../media/outrise-film.pt.vtt"></video>
-        <button class="play" type="button" id="filme-play" aria-label="Watch the Outrise film"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>Watch the film</span></button>
+        <video id="filme-video" src="../media/outrise-film.mp4" poster="../media/outrise-film-poster.webp" preload="none" playsinline crossorigin="anonymous"><track kind="captions" srclang="en" label="English" src="../media/outrise-film.en.vtt"><track kind="subtitles" srclang="pt" label="Português" src="../media/outrise-film.pt.vtt"></video>
+        <button class="play" type="button" id="filme-play" aria-label="Watch the film about Outrise"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>Watch the film</span></button>
       </div>
     </div>
   </section>
@@ -571,7 +575,6 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 </footer>
 
 <script>window.WL={url:"",key:""};window.WL_TXT={badEmail:"Enter a valid email.",consent:"We need your consent to contact you.",sending:"Sending…",done:"Thank you. You’re on the list and we’ll be in touch soon.",fail:"We couldn’t save that. Try again or write to ola@outrise.technology.",subject:"Outrise early access"};</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 (function () {
   "use strict";
@@ -649,6 +652,24 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     window.setTimeout(function () { if (!fired) showAll(); }, 2500);
   }
 
+  /* a imagem fixa da órbita fica exatamente onde o WebGL a vai desenhar */
+  var still = document.querySelector(".hero .still");
+  function placeStill() { if (!still) return; var b = still.parentNode.getBoundingClientRect(), r = Math.min(b.width / 2.25, b.height / 1.85);
+    still.style.width = still.style.height = (4 * r) + "px"; still.style.left = (b.width / 2 - 0.22 * r - 2 * r) + "px"; still.style.top = (b.height / 2 + 0.20 * r - 2 * r) + "px"; }
+  placeStill(); window.addEventListener("resize", placeStill);
+
+  /* o three.js só carrega quando a pessoa mexe na página, ou pouco depois de a página abrir */
+  var glAsked = false;
+  function loadGL() {
+    if (glAsked) return; glAsked = true;
+    var sc = document.createElement("script"); sc.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"; sc.async = true;
+    sc.onload = startGL; sc.onerror = function () { stages.forEach(function (s) { s.classList.add("no-gl"); }); };
+    document.head.appendChild(sc);
+  }
+  ["pointermove", "pointerdown", "touchstart", "wheel", "keydown", "scroll"].forEach(function (ev) { window.addEventListener(ev, loadGL, { once: true, passive: true }); });
+  if (document.readyState === "complete") setTimeout(loadGL, 3200); else window.addEventListener("load", function () { setTimeout(loadGL, 3200); });
+
+  function startGL() {
   var THREE = window.THREE;
   if (!THREE) { stages.forEach(function (s) { s.classList.add("no-gl"); }); return; }
 
@@ -872,6 +893,8 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     window.requestAnimationFrame(frame);
   }
   window.requestAnimationFrame(frame);
+  setTimeout(function () { stages.forEach(function (s) { s.classList.add("gl-on"); }); }, 250);
+  }
 })();
 
   // filme: o botão arranca o vídeo com som e passa aos controlos nativos
