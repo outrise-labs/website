@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Outrise · Agentes de IA para pessoas e empresas</title>
-<meta name="description" content="A Outrise cria produtos com agentes de IA que tratam do trabalho repetitivo de pessoas e empresas: marcações, faturas, apoio ao cliente. Pede acesso antecipado.">
+<title>Outrise · Agentes de IA à medida para empresas</title>
+<meta name="description" content="A Outrise desenha e constrói agentes de IA que tratam do trabalho repetitivo das empresas: faturas, marcações, apoio ao cliente. E cria os seus próprios produtos.">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <meta name="author" content="Outrise">
 <link rel="canonical" href="https://www.outrise.technology/pt/">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="pt_PT">
 <meta property="og:url" content="https://www.outrise.technology/pt/">
 <meta property="og:title" content="Outrise · Construímos soluções de IA em que podes confiar">
-<meta property="og:description" content="Produtos com agentes de IA para pessoas e empresas. Pede acesso antecipado.">
+<meta property="og:description" content="Agentes de IA à medida para empresas, e produtos próprios. Fala connosco sobre um projeto.">
 <meta property="og:image" content="https://www.outrise.technology/media/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Outrise: construímos soluções de IA em que podes confiar">
@@ -25,7 +25,7 @@
 <meta property="og:video:type" content="video/mp4">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Outrise · Construímos soluções de IA em que podes confiar">
-<meta name="twitter:description" content="Produtos com agentes de IA para pessoas e empresas. Pede acesso antecipado.">
+<meta name="twitter:description" content="Agentes de IA à medida para empresas, e produtos próprios. Fala connosco sobre um projeto.">
 <meta name="twitter:image" content="https://www.outrise.technology/media/og.png">
 <link rel="manifest" href="site.webmanifest">
 <!--LD-->
@@ -261,6 +261,11 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 .term .ln2{color:var(--soft);animation:fade .45s ease both}
 .term .ln2:nth-child(2){animation-delay:.25s}.term .ln2:nth-child(3){animation-delay:.6s}.term .ln2:nth-child(4){animation-delay:.95s}
 .term .ln2.done{color:#8EE0A8}
+.phases{margin-top:28px;max-width:46ch}
+.phases li{display:grid;grid-template-columns:minmax(0,13ch) minmax(0,1fr);gap:4px 16px;padding:14px 0;border-top:1px solid rgba(255,255,255,.16);font-size:.9375rem;line-height:1.45;color:#E6E6EA}
+.phases li:last-child{border-bottom:1px solid rgba(255,255,255,.16)}
+.phases b{font:400 .8125rem/1.7 var(--mono);color:#fff}
+@media (max-width:520px){.phases li{grid-template-columns:minmax(0,1fr)}}
 .stepper{margin-top:24px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;font:400 .8125rem/1.3 var(--mono);color:#fff}
 .stepper li{display:flex;align-items:center;gap:12px}
 .stepper svg{color:var(--blue);flex:none}
@@ -362,9 +367,9 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     </button>
   </div>
   <nav class="drawer" id="menu" aria-label="Menu" hidden>
-    <a href="#produtos">Produtos</a>
-    <a href="#agentes">Agentes</a>
+    <a href="#servicos">O que fazemos</a>
     <a href="#como">Como trabalhamos</a>
+    <a href="#equipa">Quem somos</a>
     <a href="#contacto">Falar connosco</a>
   </nav>
 </header>
@@ -375,14 +380,14 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     <div class="wrap">
       <div class="hero-grid">
       <div class="hero-text">
-      <a class="news" href="#contacto"><b>NOVO</b><span>Primeiros produtos em construção. Pede acesso antecipado.</span></a>
+      <a class="news" href="#contacto"><b>NOVO</b><span>Aceitamos novos projetos. Fala connosco.</span></a>
       <div class="lead">
         <h1><span class="ln"><span>Construímos soluções de IA</span></span><span class="ln"><span>em que podes confiar</span></span></h1>
-        <p class="lede"><b>Transformamos problemas reais em produtos com agentes de IA.</b> Fiáveis, robustos e simples de usar.</p>
+        <p class="lede"><b>Desenhamos e construímos agentes de IA que tratam do trabalho repetitivo das empresas.</b> E criamos os nossos próprios produtos.</p>
       </div>
       <div class="actions">
         <a class="btn" href="#contacto" data-magnet>Falar connosco</a>
-        <a class="btn line" href="#agentes">Ver como funciona</a>
+        <a class="btn line" href="#servicos">O que fazemos</a>
       </div>
       </div>
       <div class="orbit-stage" role="img" aria-label="O símbolo da Outrise feito de partículas a rodar: uma órbita aberta de onde sai um ponto azul."><img class="still" src="media/hero-still.webp" alt="" width="900" height="900" fetchpriority="high" decoding="async"></div>
@@ -407,24 +412,14 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     </div>
   </section>
 
-  <section class="plain why" id="produtos">
+  <section class="plain why" id="servicos">
     <div class="wrap">
-      <span class="chip">Porquê a Outrise</span>
+      <span class="chip">O que fazemos</span>
       <div class="intro">
         <h2 class="h2"><b>Há trabalho que ninguém quer fazer.</b> Os nossos agentes fazem-no.</h2>
-        <p>Cada produto nasce de um problema concreto e é construído à volta de agentes que tratam dele até ao fim.</p>
+        <p>Trabalhamos de três formas: construímos agentes para a tua empresa, ajudamos-te a perceber onde compensam e lançamos produtos nossos.</p>
       </div>
       <div class="cards">
-        <article class="card">
-          <div class="vis" aria-hidden="true">
-            <div class="win"><div class="bar"><i></i><i></i><i></i><span>Pedido</span></div><div class="in"><div class="bubble">Marca a revisão do carro para a próxima semana.</div><div class="reply"><b><i></i>Marcado</b>Terça, às 10h00. A confirmação está no teu email.</div></div></div>
-          </div>
-          <div class="body">
-            <h3>Para pessoas</h3>
-            <p>Pedes em linguagem normal e recebes a coisa feita, sem formulários nem menus.</p>
-            <div class="row"><a class="btn sm" href="#contacto">Quero experimentar</a></div>
-          </div>
-        </article>
         <article class="card">
           <div class="vis" aria-hidden="true">
             <div class="stack">
@@ -434,19 +429,29 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
             </div>
           </div>
           <div class="body">
-            <h3>Para empresas</h3>
-            <p>Agentes que entram nos processos que já existem e trabalham com as ferramentas da equipa.</p>
-            <div class="row"><a class="btn sm" href="#contacto">Falar com a equipa</a></div>
+            <h3>Agentes à medida</h3>
+            <p>Desenhamos e construímos agentes que entram nos processos que já existem e trabalham com as ferramentas da tua equipa.</p>
+            <div class="row"><a class="btn sm" href="#contacto" data-kind="projeto">Falar sobre um projeto</a></div>
           </div>
         </article>
         <article class="card">
           <div class="vis" aria-hidden="true">
-            <div class="slots"><div>Em construção</div><div>Em construção</div><div>O teu problema?</div></div>
+            <div class="slots"><div>Faturas</div><div>Apoio ao cliente</div><div>O teu processo?</div></div>
           </div>
           <div class="body">
-            <h3>Uma casa de produtos</h3>
-            <p>Não fazemos um produto só. Se tens um problema que merecia um agente, pode ser o próximo.</p>
-            <div class="row"><a class="btn line sm" href="#contacto">Propor um problema</a></div>
+            <h3>Diagnóstico</h3>
+            <p>Olhamos para o trabalho da tua equipa e dizemos-te onde um agente compensa, quanto tempo poupa e onde ainda não vale a pena.</p>
+            <div class="row"><a class="btn sm" href="#contacto" data-kind="projeto">Pedir um diagnóstico</a></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="vis" aria-hidden="true">
+            <div class="win"><div class="bar"><i></i><i></i><i></i><span>Pedido</span></div><div class="in"><div class="bubble">Marca a revisão do carro para a próxima semana.</div><div class="reply"><b><i></i>Marcado</b>Terça, às 10h00. A confirmação está no teu email.</div></div></div>
+          </div>
+          <div class="body">
+            <h3>Produtos próprios</h3>
+            <p>Também criamos produtos nossos: pedes em linguagem normal e recebes a coisa feita. O primeiro está em construção.</p>
+            <div class="row"><a class="btn line sm" href="#contacto" data-kind="novidades">Receber novidades</a></div>
           </div>
         </article>
       </div>
@@ -460,7 +465,8 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
       <ul class="rows">
         <li><h3>Fazer, e não só responder.</h3><p>Um agente nosso acaba a tarefa. Se não consegue, diz onde parou e porquê.</p></li>
         <li><h3>Mostrar o trabalho.</h3><p>Tudo o que um agente faz fica registado, para poderes ver, corrigir e confiar.</p></li>
-        <li><h3>Simples por fora.</h3><p>A complexidade fica do nosso lado. Tu pedes em linguagem normal e recebes a coisa feita.</p></li>
+        <li><h3>Uma pessoa decide o que importa.</h3><p>Pagamentos, mensagens a clientes e decisões sensíveis passam primeiro pela aprovação de alguém da tua equipa.</p></li>
+        <li><h3>Acesso só ao necessário.</h3><p>Cada agente acede apenas às ferramentas e aos dados de que a tarefa precisa, e cada acesso fica registado.</p></li>
       </ul>
       <div class="bento">
         <div class="tile t1">
@@ -506,12 +512,13 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     <div class="wrap">
       <div>
         <span class="chip">Como trabalhamos</span>
-        <h2 class="h2"><b>A base de como um produto sai daqui.</b></h2>
-        <p class="sub">Partimos de um pedido real, pomos um agente a tratar dele e só lançamos quando faz o trabalho sozinho.</p>
-        <ol class="stepper" aria-label="Do problema ao produto">
-          <li>Problema real</li>
-          <li><svg aria-hidden="true" width="18" height="12" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h18M13 1l6 6-6 6"></path></svg>Agente a trabalhar</li>
-          <li><svg aria-hidden="true" width="18" height="12" viewBox="0 0 20 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 7h18M13 1l6 6-6 6"></path></svg>Produto lançado</li>
+        <h2 class="h2"><b>Do primeiro pedido a um agente em produção.</b></h2>
+        <p class="sub">Começamos pequeno, provamos com o teu trabalho real e só pomos em produção quando o agente faz o trabalho sozinho.</p>
+        <ol class="phases" aria-label="Do pedido à produção">
+          <li><b>Diagnóstico</b><span>Percebemos o processo e onde um agente compensa.</span></li>
+          <li><b>Protótipo</b><span>Um agente a trabalhar sobre casos reais, ao lado da equipa.</span></li>
+          <li><b>Entrega</b><span>Ligado às vossas ferramentas, com aprovações onde importa.</span></li>
+          <li><b>Acompanhamento</b><span>Medimos resultados e afinamos o agente com o tempo.</span></li>
         </ol>
       </div>
       <div class="demo">
@@ -537,34 +544,35 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
           <div>
             <h3>Nuno Namora</h3>
             <p class="role">Fundador</p>
-            <p>Criou a Outrise para tirar das mãos de pessoas e empresas o trabalho repetitivo que ninguém quer fazer. Escolhe que problemas vale a pena resolver e acompanha cada produto, do primeiro pedido ao lançamento.</p>
+            <p>Criou a Outrise para tirar das mãos de pessoas e empresas o trabalho repetitivo que ninguém quer fazer. Escolhe que problemas vale a pena resolver e acompanha cada projeto, do primeiro pedido ao lançamento.</p>
           </div>
         </article>
       </div>
       <div class="status">
-        <p><span class="dotlive" aria-hidden="true"></span><b>Primeiro produto em construção.</b> Os primeiros acessos abrem por convite, a partir da lista de espera.</p>
+        <p><span class="dotlive" aria-hidden="true"></span><b>A aceitar novos projetos.</b> Em paralelo, estamos a construir o primeiro produto próprio.</p>
       </div>
     </div>
   </section>
 
   <section class="sheet close" id="contacto">
     <div class="wrap">
-      <span class="chip">Acesso antecipado</span>
-      <h2 class="h2"><b>Pede acesso antecipado.</b></h2>
-      <p>Deixa o teu contacto e avisamos-te quando os primeiros produtos estiverem prontos. Se nos contares o problema, dizemos-te se um agente o resolve.</p>
+      <span class="chip">Contacto</span>
+      <h2 class="h2"><b>Fala connosco sobre um projeto.</b></h2>
+      <p>Conta-nos que trabalho gostavas de tirar das mãos da tua equipa. Respondemos com uma primeira opinião sobre se um agente compensa.</p>
       <form class="wl" id="wl" novalidate>
         <div class="row2">
           <label class="fld"><span>Nome</span><input name="name" autocomplete="name" maxlength="120"></label>
           <label class="fld"><span>Email</span><input name="email" type="email" autocomplete="email" required maxlength="200"></label>
         </div>
-        <fieldset class="seg"><legend>É para</legend>
-          <label><input type="radio" name="kind" value="pessoa" checked><span>Mim</span></label>
-          <label><input type="radio" name="kind" value="empresa"><span>A minha empresa</span></label>
+        <label class="fld"><span>Empresa <i>Opcional</i></span><input name="company" autocomplete="organization" maxlength="160"></label>
+        <fieldset class="seg"><legend>Assunto</legend>
+          <label><input type="radio" name="kind" value="projeto" checked><span>Um projeto</span></label>
+          <label><input type="radio" name="kind" value="novidades"><span>Novidades dos produtos</span></label>
         </fieldset>
-        <label class="fld"><span>Que trabalho gostavas de entregar a um agente? <i>Opcional</i></span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
+        <label class="fld"><span>O que gostavas de entregar a um agente? <i>Opcional</i></span><textarea name="message" rows="3" maxlength="2000"></textarea></label>
         <label class="hp" aria-hidden="true">Não preencher<input name="company_site" tabindex="-1" autocomplete="off"></label>
-        <label class="ok"><input type="checkbox" name="consent" required><span>Aceito que a Outrise guarde estes dados para me contactar sobre o acesso antecipado. Ver a <a href="privacidade.html">política de privacidade</a>.</span></label>
-        <div class="send"><button class="btn" type="submit">Pedir acesso</button><p class="wl-msg" id="wl-msg" role="status" aria-live="polite"></p></div>
+        <label class="ok"><input type="checkbox" name="consent" required><span>Aceito que a Outrise guarde estes dados para responder ao meu contacto. Ver a <a href="privacidade.html">política de privacidade</a>.</span></label>
+        <div class="send"><button class="btn" type="submit">Enviar</button><p class="wl-msg" id="wl-msg" role="status" aria-live="polite"></p></div>
       </form>
       <p class="mailline">Preferes email? <a href="mailto:ola@outrise.technology">ola@outrise.technology</a> <button class="linkbtn" type="button" id="copiar" data-mail="ola@outrise.technology">Copiar email</button></p>
     </div>
@@ -576,17 +584,17 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     <div class="cols">
       <div>
         <a class="brand" href="#inicio" aria-label="Outrise, voltar ao início"><svg class="mark" aria-hidden="true"><use href="#orbita"></use></svg><span>outrise</span></a>
-        <p class="about">Produtos com agentes de IA para pessoas e empresas.</p>
+        <p class="about">Agentes de IA à medida para empresas, e produtos próprios.</p>
       </div>
-      <div><h3>Produtos</h3><ul><li><a href="#produtos">Para pessoas</a></li><li><a href="#produtos">Para empresas</a></li><li><a href="#contacto">Propor um problema</a></li></ul></div>
-      <div><h3>Empresa</h3><ul><li><a href="#agentes">Agentes</a></li><li><a href="#como">Como trabalhamos</a></li></ul></div>
+      <div><h3>O que fazemos</h3><ul><li><a href="#servicos">Agentes à medida</a></li><li><a href="#servicos">Diagnóstico</a></li><li><a href="#servicos">Produtos próprios</a></li></ul></div>
+      <div><h3>Empresa</h3><ul><li><a href="#como">Como trabalhamos</a></li><li><a href="#equipa">Quem somos</a></li></ul></div>
       <div><h3>Contacto</h3><ul><li><a href="mailto:ola@outrise.technology">ola@outrise.technology</a></li></ul></div>
     </div>
     <div class="base"><span>© 2026 Outrise · <a href="privacidade.html">Privacidade</a></span><span>Feito em Portugal</span></div>
   </div>
 </footer>
 
-<script>window.WL={url:"__WL_URL__",key:"__WL_KEY__"};window.WL_TXT={badEmail:"Escreve um email válido.",consent:"Para te contactarmos precisamos do teu consentimento.",sending:"A enviar…",done:"Obrigado. Estás na lista e falamos contigo em breve.",fail:"Não conseguimos guardar. Tenta outra vez ou escreve para ola@outrise.technology.",subject:"Acesso antecipado à Outrise"};</script>
+<script>window.WL={url:"__WL_URL__",key:"__WL_KEY__"};window.WL_TXT={badEmail:"Escreve um email válido.",consent:"Para te contactarmos precisamos do teu consentimento.",sending:"A enviar…",done:"Obrigado. Recebemos o teu contacto e respondemos em breve.",fail:"Não conseguimos guardar. Tenta outra vez ou escreve para ola@outrise.technology.",subject:"Contacto pelo site da Outrise"};</script>
 <script>
 (function () {
   "use strict";
@@ -649,7 +657,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 
   /* revelar blocos ao entrar no ecrã; se o observador falhar, mostra tudo */
   if (!reduce && "IntersectionObserver" in window) {
-    var targets = Array.prototype.slice.call(document.querySelectorAll(".why .chip,.why .intro,.card,.agents .chip,.agents .h2,.rows li,.tile,.blue .chip,.blue .h2,.how .chip,.how .h2,.how .sub,.how .stepper,.how .demo,.close .chip,.close .h2,.close p,.close .actions"));
+    var targets = Array.prototype.slice.call(document.querySelectorAll(".why .chip,.why .intro,.card,.agents .chip,.agents .h2,.rows li,.tile,.blue .chip,.blue .h2,.how .chip,.how .h2,.how .sub,.how .phases,.how .demo,.close .chip,.close .h2,.close p,.close .actions"));
     var fired = false;
     var showAll = function () { targets.forEach(function (t) { t.classList.add("in"); }); };
     var ro = new IntersectionObserver(function (es) {
@@ -933,7 +941,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     b.addEventListener('click',function(){v.controls=true;v.closest('.frame').classList.add('on');var p=v.play();if(p&&p.catch)p.catch(function(){});});})();
 
   // lista de espera: guarda no Supabase; sem configuração, abre um email já preenchido
-  (function(){var f=document.getElementById('wl'),msg=document.getElementById('wl-msg');if(!f)return;
+  (function(){var f=document.getElementById('wl'),msg=document.getElementById('wl-msg');if(!f)return;document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('[data-kind]');if(!a)return;var r=f.querySelector('input[name=kind][value="'+a.getAttribute('data-kind')+'"]');if(r)r.checked=true});
     var CFG=window.WL||{};var T=window.WL_TXT||{};
     f.addEventListener('submit',function(e){e.preventDefault();msg.className='wl-msg';
       var d=new FormData(f),email=(d.get('email')||'').trim(),em=f.querySelector('[name=email]');
@@ -941,8 +949,8 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
       if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){em.setAttribute('aria-invalid','true');em.focus();msg.className='wl-msg err';msg.textContent=T.badEmail;return}
       em.removeAttribute('aria-invalid');
       if(!d.get('consent')){msg.className='wl-msg err';msg.textContent=T.consent;f.querySelector('[name=consent]').focus();return}
-      var row={name:(d.get('name')||'').trim()||null,email:email,kind:d.get('kind'),message:(d.get('message')||'').trim()||null,lang:document.documentElement.lang,consent:true};
-      if(!CFG.url||!CFG.key){location.href='mailto:ola@outrise.technology?subject='+encodeURIComponent(T.subject)+'&body='+encodeURIComponent((row.name||'')+'\n'+email+'\n'+row.kind+'\n\n'+(row.message||''));return}
+      var row={name:(d.get('name')||'').trim()||null,email:email,company:(d.get('company')||'').trim()||null,kind:d.get('kind'),message:(d.get('message')||'').trim()||null,lang:document.documentElement.lang,consent:true};
+      if(!CFG.url||!CFG.key){location.href='mailto:ola@outrise.technology?subject='+encodeURIComponent(T.subject)+'&body='+encodeURIComponent((row.name||'')+'\n'+email+'\n'+(row.company||'')+'\n'+row.kind+'\n\n'+(row.message||''));return}
       var b=f.querySelector('button[type=submit]');b.disabled=true;msg.textContent=T.sending;
       fetch(CFG.url+'/rest/v1/waitlist',{method:'POST',headers:{'apikey':CFG.key,'Authorization':'Bearer '+CFG.key,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(row)})
         .then(function(r){if(!r.ok&&r.status!==409)throw new Error(r.status);f.classList.add('done');msg.textContent=T.done;})
