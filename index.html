@@ -28,7 +28,7 @@
 <meta name="twitter:description" content="We help businesses build custom AI agents. Talk to us about a project.">
 <meta name="twitter:image" content="https://www.outrise.technology/media/og-en.png">
 <link rel="manifest" href="site.webmanifest">
-<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/", "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology", "description": "We help businesses build custom AI agents.", "knowsAbout": ["AI agents", "Automation", "Artificial intelligence"], "founder": {"@type": "Person", "name": "Nuno Namora", "image": "https://www.outrise.technology/media/nuno-600.jpg", "jobTitle": "Founder"}, "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT", "sameAs": ["https://github.com/outrise-labs"]}, {"@type": "WebSite", "@id": "https://www.outrise.technology/#site", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}, {"@type": "WebPage", "@id": "https://www.outrise.technology/#page", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "isPartOf": {"@id": "https://www.outrise.technology/#site"}, "about": {"@id": "https://www.outrise.technology/#org"}, "primaryImageOfPage": "https://www.outrise.technology/media/og-en.png"}, {"@type": "VideoObject", "name": "Outrise", "description": "Outrise film: we help businesses build custom AI agents.", "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-22", "duration": "PT32S", "contentUrl": "https://www.outrise.technology/media/outrise-film.mp4", "inLanguage": "en"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/", "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology", "description": "We help businesses build custom AI agents.", "knowsAbout": ["AI agents", "Automation", "Artificial intelligence"], "founder": {"@type": "Person", "name": "Nuno Namora", "image": "https://www.outrise.technology/media/nuno-600.jpg", "jobTitle": "Founder"}, "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT", "sameAs": ["https://github.com/outrise-labs"]}, {"@type": "WebSite", "@id": "https://www.outrise.technology/#site", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}, {"@type": "WebPage", "@id": "https://www.outrise.technology/#page", "url": "https://www.outrise.technology/", "name": "Outrise", "inLanguage": "en", "isPartOf": {"@id": "https://www.outrise.technology/#site"}, "about": {"@id": "https://www.outrise.technology/#org"}, "primaryImageOfPage": "https://www.outrise.technology/media/og-en.png"}, {"@type": "VideoObject", "name": "Outrise", "description": "Outrise film: we help businesses build custom AI agents.", "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-22", "duration": "PT32S", "contentUrl": "https://www.outrise.technology/media/outrise-film.mp4", "inLanguage": "en"}, {"@type": "FAQPage", "@id": "https://www.outrise.technology/#faq", "inLanguage": "en", "mainEntity": [{"@type": "Question", "name": "How much does it cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the process and the tools involved. We start with an assessment, and before we build anything you get a proposal with a defined scope and price."}}, {"@type": "Question", "name": "How long does it take?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the process. In the assessment we tell you how long it takes to reach a prototype and to get the agent into production."}}, {"@type": "Question", "name": "Does it work with the tools we already use?", "acceptedAnswer": {"@type": "Answer", "text": "In most cases, yes: email, spreadsheets, CRM, ERP or invoicing software. In the assessment we confirm what can be connected."}}, {"@type": "Question", "name": "What happens to our data?", "acceptedAnswer": {"@type": "Answer", "text": "The agent only reaches what the task needs, and every access is logged. We agree with you where the data lives and who can see it."}}, {"@type": "Question", "name": "Do we need a technical team?", "acceptedAnswer": {"@type": "Answer", "text": "No. We handle the technical side. From you, we need someone who knows the process and can check the results."}}, {"@type": "Question", "name": "What if the agent gets it wrong?", "acceptedAnswer": {"@type": "Answer", "text": "Decisions that matter go to someone on your team before anything moves, and the log of every step lets you see and correct what happened."}}]}]}</script>
 <meta name="theme-color" content="#050506">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -165,7 +165,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 .frame .play svg{width:22px;height:22px}
 .frame .play:hover span{transform:scale(1.04);background:rgba(43,59,255,.9)}
 .frame.on .play{display:none}
-.why .intro{margin-top:18px;display:grid;gap:22px;max-width:40rem}
+.why .intro,.sectors .intro{margin-top:18px;display:grid;gap:22px;max-width:40rem}
 .why .intro p{max-width:46ch}
 .cards{margin-top:clamp(40px,5vw,64px);display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .card{display:flex;flex-direction:column;border-radius:8px;background:var(--mist);border:1px solid var(--rule);overflow:hidden}
@@ -272,6 +272,24 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
 .orbit-stage{min-height:clamp(400px,54vw,700px)}
 @media (max-width:860px){.how .wrap{grid-template-columns:minmax(0,1fr)}}
 
+.sectors{background:#fff;padding-top:0}
+.sect{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,176px),1fr));gap:0 clamp(20px,3vw,36px)}
+.sect li{padding:20px 0 24px;border-top:1px solid #D2D4DB;display:grid;gap:8px;align-content:start}
+.sect h3{font:500 1.125rem/1.25 var(--display);letter-spacing:-.01em}
+.sect p{margin:0;color:var(--body);font-size:.9375rem;line-height:1.5}
+.faq{background:var(--paper)}
+.faq-grid{margin-top:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,5vw,72px);align-items:start}
+@media (max-width:860px){.faq-grid{grid-template-columns:minmax(0,1fr)}}
+.faq .h2{max-width:14ch}
+.qa{border-top:1px solid #E3E3EA}
+.qa:last-child{border-bottom:1px solid #E3E3EA}
+.qa summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0;font:500 1.0625rem/1.35 var(--display);color:var(--ink)}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"";flex:none;width:12px;height:12px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:translateY(-3px) rotate(45deg);transition:transform .2s}
+.qa[open] summary::after{transform:translateY(3px) rotate(-135deg)}
+.qa summary:focus-visible{outline:2px solid var(--cobalt);outline-offset:4px;border-radius:4px}
+.qa p{margin:0 0 22px;max-width:60ch;color:var(--body)}
+@media (prefers-reduced-motion:reduce){.qa summary::after{transition:none}}
 /* fecho */
 .team{background:var(--paper)}
 .team-grid{margin-top:18px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,5vw,72px);align-items:start}
@@ -370,6 +388,7 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     <a href="#servicos">What we do</a>
     <a href="#como">How we work</a>
     <a href="#equipa">About us</a>
+    <a href="#perguntas">Questions</a>
     <a href="#contacto">Talk to us</a>
   </nav>
 </header>
@@ -455,6 +474,23 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
           </div>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="plain sectors" id="setores">
+    <div class="wrap">
+      <span class="chip">Who it’s for</span>
+      <div class="intro">
+        <h2 class="h2"><b>Businesses with repetitive work.</b> In any sector.</h2>
+        <p>A few examples of what an agent can take on for you:</p>
+      </div>
+      <ul class="sect">
+        <li><h3>Accounting</h3><p>Collect client invoices, classify them and prepare the entries.</p></li>
+        <li><h3>Clinics</h3><p>Book and reschedule appointments, send reminders and answer the usual questions.</p></li>
+        <li><h3>Online stores</h3><p>Answer order questions, handle returns and keep stock right.</p></li>
+        <li><h3>Real estate</h3><p>Qualify leads, schedule viewings and keep listings up to date.</p></li>
+        <li><h3>Logistics</h3><p>Track shipments, warn customers about delays and check delivery notes.</p></li>
+      </ul>
     </div>
   </section>
 
@@ -554,6 +590,23 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
     </div>
   </section>
 
+  <section class="sheet faq" id="perguntas">
+    <div class="wrap">
+      <span class="chip">FAQ</span>
+      <div class="faq-grid">
+        <h2 class="h2"><b>What people ask us</b> before we start.</h2>
+        <div class="qas">
+          <details class="qa"><summary>How much does it cost?</summary><p>It depends on the process and the tools involved. We start with an assessment, and before we build anything you get a proposal with a defined scope and price.</p></details>
+          <details class="qa"><summary>How long does it take?</summary><p>It depends on the process. In the assessment we tell you how long it takes to reach a prototype and to get the agent into production.</p></details>
+          <details class="qa"><summary>Does it work with the tools we already use?</summary><p>In most cases, yes: email, spreadsheets, CRM, ERP or invoicing software. In the assessment we confirm what can be connected.</p></details>
+          <details class="qa"><summary>What happens to our data?</summary><p>The agent only reaches what the task needs, and every access is logged. We agree with you where the data lives and who can see it.</p></details>
+          <details class="qa"><summary>Do we need a technical team?</summary><p>No. We handle the technical side. From you, we need someone who knows the process and can check the results.</p></details>
+          <details class="qa"><summary>What if the agent gets it wrong?</summary><p>Decisions that matter go to someone on your team before anything moves, and the log of every step lets you see and correct what happened.</p></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="sheet close" id="contacto">
     <div class="wrap">
       <span class="chip">Contact</span>
@@ -583,14 +636,14 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
         <p class="about">We help businesses build custom AI agents.</p>
       </div>
       <div><h3>What we do</h3><ul><li><a href="#servicos">Assessment</a></li><li><a href="#servicos">Custom agents</a></li><li><a href="#servicos">Ongoing support</a></li></ul></div>
-      <div><h3>Company</h3><ul><li><a href="#como">How we work</a></li><li><a href="#equipa">About us</a></li></ul></div>
+      <div><h3>Company</h3><ul><li><a href="#como">How we work</a></li><li><a href="#equipa">About us</a></li><li><a href="#perguntas">FAQ</a></li></ul></div>
       <div><h3>Contact</h3><ul><li><a href="mailto:ola@outrise.technology">ola@outrise.technology</a></li></ul></div>
     </div>
     <div class="base"><span>© 2026 Outrise · <a href="privacy.html">Privacy</a></span><span>Made in Portugal</span></div>
   </div>
 </footer>
 
-<script>window.WL={url:"",key:""};window.WL_TXT={badEmail:"Enter a valid email.",consent:"We need your consent to contact you.",sending:"Sending…",done:"Thank you. We’ve got your message and will reply soon.",fail:"We couldn’t save that. Try again or write to ola@outrise.technology.",subject:"Message from the Outrise website"};</script>
+<script>window.WL={url:"",key:""};window.WL_TXT={badEmail:"Enter a valid email.",consent:"We need your consent to contact you.",sending:"Sending…",done:"Thank you. We’ve got your message and will reply soon.",fail:"We couldn’t send it from here. We’ll open your email with the message ready.",subject:"Message from the Outrise website"};</script>
 <script>
 (function () {
   "use strict";
@@ -946,7 +999,11 @@ h1,h2,h3{text-wrap:balance;font-weight:400;color:var(--ink)}
       em.removeAttribute('aria-invalid');
       if(!d.get('consent')){msg.className='wl-msg err';msg.textContent=T.consent;f.querySelector('[name=consent]').focus();return}
       var row={name:(d.get('name')||'').trim()||null,email:email,company:(d.get('company')||'').trim()||null,kind:'projeto',message:(d.get('message')||'').trim()||null,lang:document.documentElement.lang,consent:true};
-      if(!CFG.url||!CFG.key){location.href='mailto:ola@outrise.technology?subject='+encodeURIComponent(T.subject)+'&body='+encodeURIComponent((row.name||'')+'\n'+email+'\n'+(row.company||'')+'\n\n'+(row.message||''));return}
+      var mailto=function(){location.href='mailto:ola@outrise.technology?subject='+encodeURIComponent(T.subject)+'&body='+encodeURIComponent((row.name||'')+'\n'+email+'\n'+(row.company||'')+'\n\n'+(row.message||''))};
+      if(!CFG.url||!CFG.key){var b0=f.querySelector('button[type=submit]');b0.disabled=true;msg.textContent=T.sending;
+        fetch('https://formsubmit.co/ajax/ola@outrise.technology',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({_subject:T.subject,_template:'table',_captcha:'false',Nome:row.name||'',Email:email,Empresa:row.company||'',Mensagem:row.message||'',Idioma:row.lang,_replyto:email})})
+          .then(function(r){return r.json()}).then(function(j){if(String(j.success)!=='true')throw new Error(j.message||'fail');f.classList.add('done');msg.textContent=T.done})
+          .catch(function(){b0.disabled=false;msg.className='wl-msg err';msg.textContent=T.fail;mailto()});return}
       var b=f.querySelector('button[type=submit]');b.disabled=true;msg.textContent=T.sending;
       fetch(CFG.url+'/rest/v1/waitlist',{method:'POST',headers:{'apikey':CFG.key,'Authorization':'Bearer '+CFG.key,'Content-Type':'application/json','Prefer':'return=minimal'},body:JSON.stringify(row)})
         .then(function(r){if(!r.ok&&r.status!==409)throw new Error(r.status);f.classList.add('done');msg.textContent=T.done;})
