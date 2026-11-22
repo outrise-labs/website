@@ -30,8 +30,6 @@ EN = [
  ('Ver a apresentação', 'Watch the film'),
  ('Há trabalho que ninguém quer fazer.', 'Some work nobody wants to do.'),
  ('Os nossos agentes fazem-no.', 'Our agents do it.'),
- ('Marca a revisão do carro para a próxima semana.', 'Book my car service for next week.'),
- ('Terça, às 10h00. A confirmação está no teu email.', 'Tuesday at 10:00. The confirmation is in your inbox.'),
  ('Agentes que trabalham sozinhos, com tudo à vista', 'Agents that work on their own, in plain sight'),
  ('Fazer, e não só responder.', 'Doing, not just answering.'),
  ('Um agente nosso acaba a tarefa. Se não consegue, diz onde parou e porquê.', 'Our agents finish the task. If one can’t, it tells you where it stopped and why.'),
@@ -52,10 +50,6 @@ EN = [
  ('Outrise, voltar ao início', 'Outrise, back to top'),
  ('Outrise, início', 'Outrise, home'),
  # demo tabs
- ('"Marca a revisão do carro para a próxima semana"', '"Book my car service for next week"'),
- ('"A ver a tua agenda e os horários da oficina"', '"Checking your calendar and the garage’s slots"'),
- ('"Terça às 10h00 está livre nos dois lados"', '"Tuesday at 10:00 works for both"'),
- ('"Marcação feita e confirmada por email"', '"Booked and confirmed by email"'),
  ('"Trata das faturas com erro deste mês"', '"Sort out this month’s wrong invoices"'),
  ('"A cruzar 42 faturas com as encomendas"', '"Matching 42 invoices against orders"'),
  ('"3 faturas com o total errado, corrigidas"', '"3 invoices with wrong totals, corrected"'),
@@ -71,16 +65,10 @@ EN = [
  ('<track kind="subtitles" srclang="pt" label="Português" src="media/outrise-film.pt.vtt" default><track kind="captions" srclang="en" label="English" src="media/outrise-film.en.vtt">', '<track kind="captions" srclang="en" label="English" src="media/outrise-film.en.vtt"><track kind="subtitles" srclang="pt" label="Português" src="media/outrise-film.pt.vtt">'),
  # company copy
  ('<title>Outrise · Agentes de IA à medida para empresas</title>', '<title>Outrise · Custom AI agents for businesses</title>'),
- ('content="A Outrise desenha e constrói agentes de IA que tratam do trabalho repetitivo das empresas: faturas, marcações, apoio ao cliente. E cria os seus próprios produtos."', 'content="Outrise designs and builds AI agents that take repetitive work off businesses: invoices, bookings, customer support. We also build products of our own."'),
- ('<meta name="twitter:description" content="Agentes de IA à medida para empresas, e produtos próprios. Fala connosco sobre um projeto.">', '<meta name="twitter:description" content="Custom AI agents for businesses, and products of our own. Talk to us about a project.">'),
- ('content="Agentes de IA à medida para empresas, e produtos próprios. Fala connosco sobre um projeto."', 'content="Custom AI agents for businesses, and products of our own. Talk to us about a project."'),
  ('Aceitamos novos projetos. Fala connosco.', 'Now taking on new projects. Talk to us.'),
  ('Desenhamos e construímos agentes de IA que tratam do trabalho repetitivo das empresas.', 'We design and build AI agents that take repetitive work off businesses.'),
- ('E criamos os nossos próprios produtos.', 'And we build products of our own.'),
- ('Trabalhamos de três formas: construímos agentes para a tua empresa, ajudamos-te a perceber onde compensam e lançamos produtos nossos.', 'We work in three ways: we build agents for your business, help you see where they pay off, and launch products of our own.'),
  ('<p>Desenhamos e construímos agentes que entram nos processos que já existem e trabalham com as ferramentas da tua equipa.</p>', '<p>We design and build agents that fit into the processes you already have and work with your team’s tools.</p>'),
  ('<p>Olhamos para o trabalho da tua equipa e dizemos-te onde um agente compensa, quanto tempo poupa e onde ainda não vale a pena.</p>', '<p>We look at your team’s work and tell you where an agent pays off, how much time it saves, and where it isn’t worth it yet.</p>'),
- ('<p>Também criamos produtos nossos: pedes em linguagem normal e recebes a coisa feita. O primeiro está em construção.</p>', '<p>We also build products of our own: you ask in plain language and get it done. The first one is in the works.</p>'),
  ('Uma pessoa decide o que importa.', 'A person signs off on what matters.'),
  ('Pagamentos, mensagens a clientes e decisões sensíveis passam primeiro pela aprovação de alguém da tua equipa.', 'Payments, messages to customers and sensitive decisions go to someone on your team for approval first.'),
  ('Acesso só ao necessário.', 'Access only to what’s needed.'),
@@ -92,7 +80,6 @@ EN = [
  ('Ligado às vossas ferramentas, com aprovações onde importa.', 'Connected to your tools, with sign-offs where they matter.'),
  ('Medimos resultados e afinamos o agente com o tempo.', 'We measure results and keep tuning the agent over time.'),
  ('Do pedido à produção', 'From request to production'),
- ('<b>A aceitar novos projetos.</b> Em paralelo, estamos a construir o primeiro produto próprio.', '<b>Taking on new projects.</b> Alongside them, we’re building our first product of our own.'),
  ('<h2 class="h2"><b>Fala connosco sobre um projeto.</b></h2>', '<h2 class="h2"><b>Talk to us about a project.</b></h2>'),
  ('Conta-nos que trabalho gostavas de tirar das mãos da tua equipa. Respondemos com uma primeira opinião sobre se um agente compensa.', 'Tell us what work you’d like to take off your team’s hands. We’ll reply with a first view on whether an agent pays off.'),
  ('<span>Empresa <i>Opcional</i></span>', '<span>Company <i>Optional</i></span>'),
@@ -100,9 +87,19 @@ EN = [
  ('Aceito que a Outrise guarde estes dados para responder ao meu contacto. Ver a <a href="privacidade.html">política de privacidade</a>.', 'I agree that Outrise may keep these details to reply to my message. See the <a href="privacy.html">privacy policy</a>.'),
  ('done:"Obrigado. Recebemos o teu contacto e respondemos em breve."', 'done:"Thank you. We’ve got your message and will reply soon."'),
  ('subject:"Contacto pelo site da Outrise"', 'subject:"Message from the Outrise website"'),
- ('<p class="about">Agentes de IA à medida para empresas, e produtos próprios.</p>', '<p class="about">Custom AI agents for businesses, and products of our own.</p>'),
  # team
- ('Criou a Outrise para tirar das mãos de pessoas e empresas o trabalho repetitivo que ninguém quer fazer. Escolhe que problemas vale a pena resolver e acompanha cada projeto, do primeiro pedido ao lançamento.', 'Started Outrise to take the repetitive work nobody wants off the hands of people and businesses. Chooses which problems are worth solving and follows every project from the first request to launch.'),
+ ('content="A Outrise ajuda empresas a desenhar e construir agentes de IA que tratam do trabalho repetitivo: faturas, marcações, apoio ao cliente. Do diagnóstico à entrega."', 'content="Outrise helps businesses design and build AI agents that take on repetitive work: invoices, bookings, customer support. From assessment to delivery."'),
+ ('<meta name="twitter:description" content="Ajudamos empresas a construir agentes de IA à medida. Fala connosco sobre um projeto.">', '<meta name="twitter:description" content="We help businesses build custom AI agents. Talk to us about a project.">'),
+ ('content="Ajudamos empresas a construir agentes de IA à medida. Fala connosco sobre um projeto."', 'content="We help businesses build custom AI agents. Talk to us about a project."'),
+ ('Do diagnóstico à entrega, ao lado da tua equipa.', 'From assessment to delivery, alongside your team.'),
+ ('Ajudamos-te do princípio ao fim: percebemos onde um agente compensa, construímo-lo à medida e mantemo-lo a funcionar.', 'We help from start to finish: we find where an agent pays off, build it to fit, and keep it running.'),
+ ('Onde está a encomenda 4521?', 'Where is order 4521?'),
+ ('Enviada hoje. O cliente já tem o código de seguimento.', 'Shipped today. The customer already has the tracking code.'),
+ ('<p>Depois de entregue, mantemos o agente a funcionar, medimos o tempo que poupa e afinamo-lo à medida que o negócio muda.</p>', '<p>Once it’s live, we keep the agent running, measure the time it saves and tune it as your business changes.</p>'),
+ ('pessoas: ["Responde aos emails sobre o estado das encomendas de hoje", ["A ler 18 emails e a consultar as encomendas", "16 respondidos com o estado e o código de envio", "2 casos passados à equipa, com resumo"]]', 'pessoas: ["Answer today’s emails about order status", ["Reading 18 emails and checking the orders", "16 answered with status and tracking code", "2 cases handed to the team, with a summary"]]'),
+ ('Criou a Outrise para ajudar empresas a tirar das mãos das equipas o trabalho repetitivo que ninguém quer fazer. Escolhe com cada cliente que problemas vale a pena resolver e acompanha cada projeto, do primeiro pedido ao lançamento.', 'Started Outrise to help businesses take the repetitive work nobody wants off their teams’ hands. Works with each client to choose which problems are worth solving, and follows every project from the first request to launch.'),
+ ('<b>A aceitar novos projetos.</b> Conta-nos o que a tua equipa gostava de deixar de fazer à mão.', '<b>Taking on new projects.</b> Tell us what your team would like to stop doing by hand.'),
+ ('<p class="about">Ajudamos empresas a construir agentes de IA à medida.</p>', '<p class="about">We help businesses build custom AI agents.</p>'),
  ('<b>Quem está por trás.</b> Pessoas, não só agentes.', '<b>Who is behind it.</b> People, not just agents.'),
  # footer
  ('<a href="privacidade.html">Privacidade</a>', '<a href="privacy.html">Privacy</a>'),
@@ -111,18 +108,59 @@ EN = [
 ]
 # short labels: only whole text nodes or exact attribute values
 SHORT = {
- 'Como trabalhamos':'How we work', 'Falar connosco':'Talk to us', 'NOVO':'NEW',
-'Marcações':'Bookings', 'Faturas':'Invoices', 'Apoio ao cliente':'Customer support',
- 'Relatórios':'Reports', 'Encomendas':'Orders', 'Apresentação':'Film', 'Pedido':'Request',
- 'Marcado':'Booked', 'Agente':'Agent', 'Trabalho':'Work',
- 'Registo':'Log', 
- 'Como trabalham':'How they work', 'Passo a passo':'Step by step', 'a ler':'reading', 'a fazer':'doing', 'a verificar':'checking',
- 'Tarefas feitas':'Tasks done', 'Seg':'Mon', 'Sex':'Fri', 'Registo de cada passo':'Every step logged', 'Lido':'Read', 'Feito':'Done',
- 'Verificado':'Checked', 'Entregue':'Delivered', 'O que nos guia':'What guides us', 'Fiabilidade':'Reliability',
- 'Transparência':'Transparency', 'Robustez':'Robustness', 'Simplicidade':'Simplicity', 'Qualidade':'Quality', 'Resultados':'Results',
- 'Pessoas':'People',
- 'Empresas':'Businesses', 'Nome':'Name', 'Não preencher':'Leave empty', 'Copiar email':'Copy email',
- 'Empresa':'Company', 'Quem somos':'About us', 'Fundador':'Founder', 'Contacto':'Contact', 'O que fazemos':'What we do', 'Agentes à medida':'Custom agents', 'Diagnóstico':'Assessment', 'Produtos próprios':'Our own products', 'Falar sobre um projeto':'Talk about a project', 'Pedir um diagnóstico':'Ask for an assessment', 'Receber novidades':'Get product news', 'O teu processo?':'Your process?', 'Protótipo':'Prototype', 'Entrega':'Delivery', 'Acompanhamento':'Ongoing support', 'Assunto':'Subject', 'Um projeto':'A project', 'Novidades dos produtos':'Product news', 'Enviar':'Send', 'Menu':'Menu',
+ 'Como trabalhamos':'How we work',
+ 'Falar connosco':'Talk to us',
+ 'NOVO':'NEW',
+ 'Marcações':'Bookings',
+ 'Faturas':'Invoices',
+ 'Apoio ao cliente':'Customer support',
+ 'Relatórios':'Reports',
+ 'Encomendas':'Orders',
+ 'Apresentação':'Film',
+ 'Pedido':'Request',
+ 'Agente':'Agent',
+ 'Trabalho':'Work',
+ 'Registo':'Log',
+ 'Como trabalham':'How they work',
+ 'Passo a passo':'Step by step',
+ 'a ler':'reading',
+ 'a fazer':'doing',
+ 'a verificar':'checking',
+ 'Tarefas feitas':'Tasks done',
+ 'Seg':'Mon',
+ 'Sex':'Fri',
+ 'Registo de cada passo':'Every step logged',
+ 'Lido':'Read',
+ 'Feito':'Done',
+ 'Verificado':'Checked',
+ 'Entregue':'Delivered',
+ 'O que nos guia':'What guides us',
+ 'Fiabilidade':'Reliability',
+ 'Transparência':'Transparency',
+ 'Robustez':'Robustness',
+ 'Simplicidade':'Simplicity',
+ 'Qualidade':'Quality',
+ 'Resultados':'Results',
+ 'Nome':'Name',
+ 'Não preencher':'Leave empty',
+ 'Copiar email':'Copy email',
+ 'Empresa':'Company',
+ 'Quem somos':'About us',
+ 'Fundador':'Founder',
+ 'Contacto':'Contact',
+ 'O que fazemos':'What we do',
+ 'Agentes à medida':'Custom agents',
+ 'Diagnóstico':'Assessment',
+ 'Falar sobre um projeto':'Talk about a project',
+ 'Pedir um diagnóstico':'Ask for an assessment',
+ 'O teu processo?':'Your process?',
+ 'Protótipo':'Prototype',
+ 'Entrega':'Delivery',
+ 'Acompanhamento':'Ongoing support',
+ 'Enviar':'Send',
+ 'Menu':'Menu',
+ 'Respondido':'Answered',
+ 'Ver como trabalhamos':'See how we work',
 }
 en = src
 for a, b in EN:
@@ -145,7 +183,7 @@ def ld(lang):
     url = "https://www.outrise.technology/" + ("pt/" if pt else "")
     org = {"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/",
            "logo": "https://www.outrise.technology/apple-touch-icon.png", "email": "ola@outrise.technology",
-           "description": "Agentes de IA à medida para empresas, e produtos próprios." if pt else "Custom AI agents for businesses, and products of our own.",
+           "description": "Ajudamos empresas a construir agentes de IA à medida." if pt else "We help businesses build custom AI agents.",
            "knowsAbout": ["AI agents", "Automation", "Artificial intelligence"],
            "founder": {"@type": "Person", "name": "Nuno Namora", "image": "https://www.outrise.technology/media/nuno-600.jpg", "jobTitle": "Fundador" if pt else "Founder"},
            "foundingLocation": {"@type": "Place", "name": "Portugal"}, "areaServed": "PT",
@@ -199,8 +237,8 @@ PT_P = '''<!DOCTYPE html><html lang="pt-PT"><head><meta charset="utf-8"><meta na
 <h1>Política de privacidade</h1><p class="meta">Última atualização: 21 de novembro de 2026 · <a href="../privacy.html" lang="en">English</a></p>
 <p>Esta página explica que dados a Outrise recolhe neste site, para quê e que direitos tens.</p>
 <h2>Quem é responsável</h2><p>A Outrise é responsável pelos dados recolhidos em outrise.technology. Para qualquer questão sobre privacidade, escreve para <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>.</p>
-<h2>Que dados recolhemos</h2><ul><li><b>Formulário de contacto:</b> o nome (se o indicares), o email, a empresa (opcional), o assunto (projeto ou novidades dos produtos), a mensagem opcional, a língua da página e a data do pedido.</li><li><b>Estatísticas de visitas:</b> usamos o Vercel Web Analytics, que conta visitas de forma agregada, sem cookies e sem identificar quem visita.</li></ul>
-<h2>Para que os usamos</h2><p>Usamos estes dados apenas para responder ao teu contacto e, se escolheres novidades dos produtos, para te avisar sobre os produtos da Outrise. Não vendemos nem partilhamos estes dados para publicidade.</p>
+<h2>Que dados recolhemos</h2><ul><li><b>Formulário de contacto:</b> o nome (se o indicares), o email, a empresa (opcional), a mensagem opcional, a língua da página e a data do pedido.</li><li><b>Estatísticas de visitas:</b> usamos o Vercel Web Analytics, que conta visitas de forma agregada, sem cookies e sem identificar quem visita.</li></ul>
+<h2>Para que os usamos</h2><p>Usamos estes dados apenas para responder ao teu contacto e falar contigo sobre o teu projeto. Não vendemos nem partilhamos estes dados para publicidade.</p>
 <h2>Base legal</h2><p>O teu consentimento, dado quando marcas a caixa no formulário. Podes retirá-lo a qualquer momento, sem afetar o que foi feito antes.</p>
 <h2>Onde ficam guardados</h2><p>Os pedidos chegam-nos por email, para ola@outrise.technology. Se passarmos a guardá-los numa base de dados, será alojada na União Europeia e atualizamos esta página. O site é servido pela Vercel.</p>
 <h2>Durante quanto tempo</h2><p>Até pedires para os apagar, ou no máximo 24 meses depois do último contacto.</p>
@@ -211,8 +249,8 @@ EN_P = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name=
 <h1>Privacy policy</h1><p class="meta">Last updated: 21 November 2026 · <a href="pt/privacidade.html" lang="pt">Português</a></p>
 <p>This page explains what data Outrise collects on this site, why, and what rights you have.</p>
 <h2>Who is responsible</h2><p>Outrise is responsible for the data collected on outrise.technology. For any privacy question, write to <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>.</p>
-<h2>What we collect</h2><ul><li><b>Contact form:</b> your name (if you give it), your email, your company (optional), the subject (a project or product news), the optional message, the page language and the date of the request.</li><li><b>Visit statistics:</b> we use Vercel Web Analytics, which counts visits in aggregate, without cookies and without identifying visitors.</li></ul>
-<h2>What we use it for</h2><p>We use this data only to reply to your message and, if you choose product news, to tell you about Outrise products. We do not sell this data or share it for advertising.</p>
+<h2>What we collect</h2><ul><li><b>Contact form:</b> your name (if you give it), your email, your company (optional), the optional message, the page language and the date of the request.</li><li><b>Visit statistics:</b> we use Vercel Web Analytics, which counts visits in aggregate, without cookies and without identifying visitors.</li></ul>
+<h2>What we use it for</h2><p>We use this data only to reply to your message and talk with you about your project. We do not sell this data or share it for advertising.</p>
 <h2>Legal basis</h2><p>Your consent, given when you tick the box on the form. You can withdraw it at any time, without affecting anything done before.</p>
 <h2>Where it is stored</h2><p>Requests reach us by email, at ola@outrise.technology. If we start keeping them in a database, it will be hosted in the European Union and we will update this page. The site is served by Vercel.</p>
 <h2>How long we keep it</h2><p>Until you ask us to delete it, or at most 24 months after our last contact.</p>
