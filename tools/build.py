@@ -60,7 +60,7 @@ EN = [
  ('badEmail:"Escreve um email válido."', 'badEmail:"Enter a valid email."'),
  ('consent:"Para te contactarmos precisamos do teu consentimento."', 'consent:"We need your consent to contact you."'),
  ('sending:"A enviar…"', 'sending:"Sending…"'),
- ('fail:"Não conseguimos guardar. Tenta outra vez ou escreve para ola@outrise.technology."', 'fail:"We couldn’t save that. Try again or write to ola@outrise.technology."'),
+ ('fail:"Não deu para enviar daqui. Vamos abrir o teu email com a mensagem pronta."', 'fail:"We couldn’t send it from here. We’ll open your email with the message ready."'),
  # subtitles: English page shows no subtitles by default
  ('<track kind="subtitles" srclang="pt" label="Português" src="media/outrise-film.pt.vtt" default><track kind="captions" srclang="en" label="English" src="media/outrise-film.en.vtt">', '<track kind="captions" srclang="en" label="English" src="media/outrise-film.en.vtt"><track kind="subtitles" srclang="pt" label="Português" src="media/outrise-film.pt.vtt">'),
  # company copy
@@ -87,6 +87,21 @@ EN = [
  ('Aceito que a Outrise guarde estes dados para responder ao meu contacto. Ver a <a href="privacidade.html">política de privacidade</a>.', 'I agree that Outrise may keep these details to reply to my message. See the <a href="privacy.html">privacy policy</a>.'),
  ('done:"Obrigado. Recebemos o teu contacto e respondemos em breve."', 'done:"Thank you. We’ve got your message and will reply soon."'),
  ('subject:"Contacto pelo site da Outrise"', 'subject:"Message from the Outrise website"'),
+ # sectors and faq
+ ('<b>Empresas com trabalho repetitivo.</b> Em qualquer setor.', '<b>Businesses with repetitive work.</b> In any sector.'),
+ ('Alguns exemplos do que um agente pode tratar por ti:', 'A few examples of what an agent can take on for you:'),
+ ('Recolher as faturas dos clientes, classificá-las e preparar os lançamentos.', 'Collect client invoices, classify them and prepare the entries.'),
+ ('Marcar e remarcar consultas, enviar lembretes e responder às perguntas de sempre.', 'Book and reschedule appointments, send reminders and answer the usual questions.'),
+ ('Responder sobre encomendas, tratar devoluções e manter o stock certo.', 'Answer order questions, handle returns and keep stock right.'),
+ ('Qualificar contactos, agendar visitas e manter os anúncios atualizados.', 'Qualify leads, schedule viewings and keep listings up to date.'),
+ ('Acompanhar envios, avisar clientes de atrasos e conferir guias de transporte.', 'Track shipments, warn customers about delays and check delivery notes.'),
+ ('<b>O que nos perguntam</b> antes de começar.', '<b>What people ask us</b> before we start.'),
+ ('<summary>Quanto custa?</summary><p>Depende do processo e das ferramentas envolvidas. Começamos por um diagnóstico e, antes de construirmos, recebes uma proposta com âmbito e preço definidos.</p>', '<summary>How much does it cost?</summary><p>It depends on the process and the tools involved. We start with an assessment, and before we build anything you get a proposal with a defined scope and price.</p>'),
+ ('<summary>Quanto tempo demora?</summary><p>Depende do processo. No diagnóstico dizemos-te quanto tempo leva até ao protótipo e até o agente estar em produção.</p>', '<summary>How long does it take?</summary><p>It depends on the process. In the assessment we tell you how long it takes to reach a prototype and to get the agent into production.</p>'),
+ ('<summary>Funciona com as ferramentas que já usamos?</summary><p>Na maioria dos casos, sim: email, folhas de cálculo, CRM, ERP ou software de faturação. No diagnóstico confirmamos o que é possível ligar.</p>', '<summary>Does it work with the tools we already use?</summary><p>In most cases, yes: email, spreadsheets, CRM, ERP or invoicing software. In the assessment we confirm what can be connected.</p>'),
+ ('<summary>O que acontece aos nossos dados?</summary><p>O agente só acede ao que a tarefa precisa e cada acesso fica registado. Combinamos contigo onde os dados ficam e quem os pode ver.</p>', '<summary>What happens to our data?</summary><p>The agent only reaches what the task needs, and every access is logged. We agree with you where the data lives and who can see it.</p>'),
+ ('<summary>Precisamos de uma equipa técnica?</summary><p>Não. Tratamos da parte técnica. Da vossa parte, precisamos de alguém que conheça o processo e valide os resultados.</p>', '<summary>Do we need a technical team?</summary><p>No. We handle the technical side. From you, we need someone who knows the process and can check the results.</p>'),
+ ('<summary>E se o agente se enganar?</summary><p>As decisões que importam passam por uma pessoa da tua equipa antes de avançar, e o registo de cada passo permite ver e corrigir o que aconteceu.</p>', '<summary>What if the agent gets it wrong?</summary><p>Decisions that matter go to someone on your team before anything moves, and the log of every step lets you see and correct what happened.</p>'),
  # team
  ('content="A Outrise ajuda empresas a desenhar e construir agentes de IA que tratam do trabalho repetitivo: faturas, marcações, apoio ao cliente. Do diagnóstico à entrega."', 'content="Outrise helps businesses design and build AI agents that take on repetitive work: invoices, bookings, customer support. From assessment to delivery."'),
  ('<meta name="twitter:description" content="Ajudamos empresas a construir agentes de IA à medida. Fala connosco sobre um projeto.">', '<meta name="twitter:description" content="We help businesses build custom AI agents. Talk to us about a project.">'),
@@ -161,6 +176,14 @@ SHORT = {
  'Menu':'Menu',
  'Respondido':'Answered',
  'Ver como trabalhamos':'See how we work',
+ 'Contabilidade':'Accounting',
+ 'Clínicas':'Clinics',
+ 'Lojas online':'Online stores',
+ 'Imobiliárias':'Real estate',
+ 'Logística':'Logistics',
+ 'Para quem':'Who it’s for',
+ 'Perguntas frequentes':'FAQ',
+ 'Perguntas':'Questions',
 }
 en = src
 for a, b in EN:
@@ -178,7 +201,7 @@ for d in ("fonts/", "media/", "favicon.svg", "favicon-32.png", "apple-touch-icon
 left = [w for w in ("Construímos","Fiáveis","Pede ","Copiar","Feito em","agentes de IA que tratam","Narrado","conta-nos","Preferes") if w in en]
 if left: raise SystemExit("untranslated: " + ", ".join(left))
 import json
-def ld(lang):
+def ld(lang, html=""):
     pt = lang == "pt"
     url = "https://www.outrise.technology/" + ("pt/" if pt else "")
     org = {"@type": "Organization", "@id": "https://www.outrise.technology/#org", "name": "Outrise", "url": "https://www.outrise.technology/",
@@ -191,12 +214,14 @@ def ld(lang):
     site = {"@type": "WebSite", "@id": url + "#site", "url": url, "name": "Outrise", "inLanguage": "pt-PT" if pt else "en", "publisher": {"@id": "https://www.outrise.technology/#org"}}
     page = {"@type": "WebPage", "@id": url + "#page", "url": url, "name": "Outrise", "inLanguage": "pt-PT" if pt else "en", "isPartOf": {"@id": url + "#site"},
             "about": {"@id": "https://www.outrise.technology/#org"}, "primaryImageOfPage": "https://www.outrise.technology/media/" + ("og.png" if pt else "og-en.png")}
-    video = {"@type": "VideoObject", "name": "Outrise", "description": ("Apresentação da Outrise: agentes de IA que tratam do trabalho por ti. Narrado em inglês." if pt else "Outrise in 32 seconds: AI agents that take care of the work for you."),
-             "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-21", "duration": "PT32S",
+    video = {"@type": "VideoObject", "name": "Outrise", "description": ("Apresentação da Outrise: ajudamos empresas a construir agentes de IA à medida. Narrado em inglês." if pt else "Outrise film: we help businesses build custom AI agents."),
+             "thumbnailUrl": "https://www.outrise.technology/media/outrise-film-poster.webp", "uploadDate": "2026-11-22", "duration": "PT32S",
              "contentUrl": "https://www.outrise.technology/media/outrise-film.mp4", "inLanguage": "en"}
-    return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [org, site, page, video]}, ensure_ascii=False) + '</script>'
-en = en.replace("<!--LD-->", ld("en"))
-pt = pt.replace("<!--LD-->", ld("pt"))
+    qa = re.findall(r'<details class="qa"><summary>(.*?)</summary><p>(.*?)</p></details>', html)
+    faq = {"@type": "FAQPage", "@id": url + "#faq", "inLanguage": "pt-PT" if pt else "en", "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]}
+    return '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": [org, site, page, video] + ([faq] if qa else [])}, ensure_ascii=False) + '</script>'
+en = en.replace("<!--LD-->", ld("en", en))
+pt = pt.replace("<!--LD-->", ld("pt", pt))
 open("index.html", "w").write(en)
 os.makedirs("pt", exist_ok=True)
 open("pt/index.html", "w").write(pt)
@@ -240,7 +265,7 @@ PT_P = '''<!DOCTYPE html><html lang="pt-PT"><head><meta charset="utf-8"><meta na
 <h2>Que dados recolhemos</h2><ul><li><b>Formulário de contacto:</b> o nome (se o indicares), o email, a empresa (opcional), a mensagem opcional, a língua da página e a data do pedido.</li><li><b>Estatísticas de visitas:</b> usamos o Vercel Web Analytics, que conta visitas de forma agregada, sem cookies e sem identificar quem visita.</li></ul>
 <h2>Para que os usamos</h2><p>Usamos estes dados apenas para responder ao teu contacto e falar contigo sobre o teu projeto. Não vendemos nem partilhamos estes dados para publicidade.</p>
 <h2>Base legal</h2><p>O teu consentimento, dado quando marcas a caixa no formulário. Podes retirá-lo a qualquer momento, sem afetar o que foi feito antes.</p>
-<h2>Onde ficam guardados</h2><p>Os pedidos chegam-nos por email, para ola@outrise.technology. Se passarmos a guardá-los numa base de dados, será alojada na União Europeia e atualizamos esta página. O site é servido pela Vercel.</p>
+<h2>Onde ficam guardados</h2><p>O formulário envia os pedidos para ola@outrise.technology através do FormSubmit, um serviço de reencaminhamento de formulários. Se passarmos a guardá-los numa base de dados, será alojada na União Europeia e atualizamos esta página. O site é servido pela Vercel.</p>
 <h2>Durante quanto tempo</h2><p>Até pedires para os apagar, ou no máximo 24 meses depois do último contacto.</p>
 <h2>Os teus direitos</h2><p>Podes pedir acesso, correção ou eliminação dos teus dados, opor-te ao tratamento e pedir a portabilidade, escrevendo para <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>. Se achares que os teus direitos não foram respeitados, podes apresentar queixa à Comissão Nacional de Proteção de Dados (<a href="https://www.cnpd.pt">cnpd.pt</a>).</p>
 </main></body></html>'''
@@ -252,7 +277,7 @@ EN_P = '''<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name=
 <h2>What we collect</h2><ul><li><b>Contact form:</b> your name (if you give it), your email, your company (optional), the optional message, the page language and the date of the request.</li><li><b>Visit statistics:</b> we use Vercel Web Analytics, which counts visits in aggregate, without cookies and without identifying visitors.</li></ul>
 <h2>What we use it for</h2><p>We use this data only to reply to your message and talk with you about your project. We do not sell this data or share it for advertising.</p>
 <h2>Legal basis</h2><p>Your consent, given when you tick the box on the form. You can withdraw it at any time, without affecting anything done before.</p>
-<h2>Where it is stored</h2><p>Requests reach us by email, at ola@outrise.technology. If we start keeping them in a database, it will be hosted in the European Union and we will update this page. The site is served by Vercel.</p>
+<h2>Where it is stored</h2><p>The form sends requests to ola@outrise.technology through FormSubmit, a form-forwarding service. If we start keeping them in a database, it will be hosted in the European Union and we will update this page. The site is served by Vercel.</p>
 <h2>How long we keep it</h2><p>Until you ask us to delete it, or at most 24 months after our last contact.</p>
 <h2>Your rights</h2><p>You can ask to access, correct or delete your data, object to its use and ask for portability by writing to <a href="mailto:ola@outrise.technology">ola@outrise.technology</a>. If you believe your rights were not respected, you can complain to the Portuguese data protection authority, CNPD (<a href="https://www.cnpd.pt">cnpd.pt</a>).</p>
 </main></body></html>'''
